@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width = device-width, initial-scale = 1">
 	<title>Team Teach 02</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="team02.css">
 	<script type="text/javascript" src="team02.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
 
 </head>
 <body>
-	<div class="div" id="div1"><p>Div 1</p></div>
-	<div class="div" id="div2"><p>Div 2</p></div>
-	<div class="div" id="div3"><p>Div 3</p></div>
-	
-	<input type="text" id="div1Color" name="div1Color">
-	<button id="btn1" type="button" onclick="changeDiv1Color()">Change Color</button>
-	<button id="btn2" type="button" onclick="clicked()">Click Me</button>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="div" id="div1"><p>Div 1</p></div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+	      <div class="div" id="div2"><p>Div 2</p></div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+	      <div class="div" id="div3"><p>Div 3</p></div>
+      </div>
+    </div>
+  </div>
+	  
+	  
+	<!-- Toolbar for buttons and input-->
+	<div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+	  <input type="text" class="form-control" id="div1Color" name="div1Color">
+
+	  <button class="btn btn-info" id="btn1" type="button" onclick="changeDiv1Color()">Change Color</button>
+	  <button class="btn btn-info" id="btn2" type="button" onclick="clicked()">Click Me</button>
+	  <button class="btn btn-info" id="btn3" type="button" onclick="toggleHideDiv3()">Toggle Hide Div 3</button>
+
+	  </div>
+	  
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </body>
 </html>

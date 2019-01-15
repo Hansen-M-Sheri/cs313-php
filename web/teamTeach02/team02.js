@@ -1,3 +1,4 @@
+
 function clicked(){
 	alert("Clicked");
 }
@@ -11,3 +12,17 @@ function changeDiv1Color(){
  $('#div1').css("background-color", color);
 }
 
+//toggle hide/show div 3 when clicked
+function toggleHideDiv3(){
+  var div = document.getElementById("div3");
+  if (div.style.display == "none" ) {
+    // div.style.display = "block";
+    $('#div3').fadeIn('slow');
+  }
+  else {
+   
+    // div.style.display = "none";
+     $('#div3').fadeOut('slow');
+  }
+  
+}
