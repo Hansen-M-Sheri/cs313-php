@@ -1,3 +1,5 @@
+<?php include "templates/header.php"; ?>
+
 <div class="container">
   	  <!-- Nav bar-->
   	  <nav class="navbar navbar-expand-lg navbar-light ">
@@ -34,3 +36,5 @@
             </div>
           </div>
         </div>
+
+<?php include "templates/footer.php"; ?>
