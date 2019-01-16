@@ -16,7 +16,7 @@
     <!-- Cards -->
     <div class="row">
       <div class="col-md-4" id="interest1">
-        <img class="card-img-top" data-src="../images/typingOnLaptop.jpeg">
+        <img class="card-img-top" src="../images/typingOnLaptop.jpeg">
         <div class="card  mb-4 box-shadow">
           <div class="card-body ">
             <h2 class="card-title">Family</h2>
