@@ -11,7 +11,7 @@
       <p id="quote">The meaning of life is to find your gift. The purpose of life is to give it away.
         <br/> Anonymous
       </p>
-      <button type="button" class="btn-info">Assignments</button>
+      <a href="assignments.php" class="btn btn-info" role="button">Assignments</a>
     </div>
     <!-- Cards -->
     <div class="row">
