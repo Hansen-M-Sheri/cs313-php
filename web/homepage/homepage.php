@@ -16,11 +16,11 @@
     <!-- Cards -->
     <div class="row">
       <div class="col-md-4" id="interest1">
-        <img class="card-img-top" src="../images/typingOnLaptop.jpeg">
+        <img class="card-img-top" src="images/books.jpeg">
         <div class="card  mb-4 box-shadow">
           <div class="card-body ">
-            <h2 class="card-title">Family</h2>
-            <p class="card-text">I have an amazing husband and 5 lovely children. We love to laugh together, and simply enjoy being together. </p>
+            <h2 class="card-title">Reading</h2>
+            <p class="card-text">I love to read and can't wait till I have a little more time to read all of the books I haven't gotten to yet </p>
           </div><!--body-->
         </div><!--card-->
       </div><!--column-->
@@ -34,7 +34,7 @@
         </div><!--card-->
       </div><!--column-->
       <div class="col-md-4" id="interest1">
-        <img class="card-img-top" src="../images/typingOnLaptop.jpeg">
+        <img class="card-img-top" src="images/succulent.jpeg">
         <div class="card  mb-4 box-shadow">
           <div class="card-body ">
             <h2 class="card-title">Succulents</h2>
