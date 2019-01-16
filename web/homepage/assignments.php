@@ -19,7 +19,7 @@ include "templates/header.php";
         <div class="card mb-4 bg-secondary box-shadow">
           <div class="card-body ">
             <a href="#">
-              <h2 class="card-title">Team Teach 02</h2>
+              <h2 class="assignCard-title">Team Teach 02</h2>
               </a>
           </div><!--body-->
         </div><!--card-->
@@ -28,7 +28,7 @@ include "templates/header.php";
         <div class="card mb-4 bg-secondary box-shadow">
           <div class="card-body ">
             <a href="homepage.php">
-              <h2 class="card-title">Prove 02: Homepage</h2>
+              <h2 class="assignCard-title">Prove 02: Homepage</h2>
               </a>
           </div><!--body-->
         </div><!--card-->
@@ -37,7 +37,7 @@ include "templates/header.php";
         <div class="card mb-4 bg-secondary box-shadow">
           <div class="card-body ">
             <a href="#">
-              <h2 class="card-title">Team Teach 03 <br/> Coming Soon</h2>
+              <h2 class="assignCard-title">Team Teach 03 <br/> Coming Soon</h2>
               </a>
           </div><!--body-->
         </div><!--card-->
@@ -46,7 +46,7 @@ include "templates/header.php";
         <div class="card mb-4 bg-secondary box-shadow">
           <div class="card-body ">
             <a href="#">
-              <h2 class="card-title">Prove 03 <br/> Shopping Cart <br/> Coming Soon</h2>
+              <h2 class="assignCard-title">Prove 03 <br/> Shopping Cart <br/> Coming Soon</h2>
               </a>
           </div><!--body-->
         </div><!--card-->
@@ -55,7 +55,7 @@ include "templates/header.php";
         <div class="card mb-4 bg-secondary box-shadow">
           <div class="card-body ">
             <a href="#">
-              <h2 class="card-title">Team Teach 04 <br/> Coming Soon</h2>
+              <h2 class="assignCard-title">Team Teach 04 <br/> Coming Soon</h2>
               </a>
           </div><!--body-->
         </div><!--card-->
