@@ -1,18 +1,36 @@
-  <div class="container">
-  	<nav class="row"></nav>
-    <div class="row" >
-    	<div class="col-lg-12 col-med-12 col-sm-12 col-xs-12"></div>
-    </div>
-  </div>
-	  
-	  
-	<!-- Toolbar for buttons and input-->
-	<div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-	  <input type="text" class="form-control" id="div1Color" name="div1Color">
-
-	  <button class="btn btn-info" id="btn1" type="button" onclick="changeDiv1Color()">Change Color</button>
-	  <button class="btn btn-info" id="btn2" type="button" onclick="clicked()">Click Me</button>
-	  <button class="btn btn-info" id="btn3" type="button" onclick="toggleHideDiv3()">Toggle Hide Div 3</button>
-
-	  </div>
-	  
+<div class="container">
+  	  <!-- Nav bar-->
+  	  <nav class="navbar navbar-expand-lg navbar-light ">
+  	    <a class="navbar-brand" hreg="#">SH</a>
+  	  </nav>
+  	  <!-- Jumbotron -->
+  	  <div class="jumbotron bg-secondary" id="banner">
+  	    <h1>Sheri Hansen</h1>
+  	    <p id="quote">The meaning of life is to find your gift. The purpose of life is to give it away. <br/> 
+  	    Anonymous</p>
+  		  <button type="button" class="btn-info">Assignments</button>
+    	</div>
+    	<!-- Cards -->
+      <div class="row mb-2" id="interests">
+        <div class="col-md-6  col-xs-12 " id="interest1">
+          <div class="card">
+            <div class="card-body ">
+              <h2>Family</h2>
+              <p>I have an amazing husband and 5 lovely children. We love to laugh together, and simply enjoy being together. </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xs-12" id="interest2">
+          <div class="card" >
+            <div class="card-body">
+              <h2>Succulents</h2>
+              <p>I received my first succulent as a gift last year, and am in love! Despite the lack of light and cold weather here, I have managed to keep it alive so far. </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xs-12" id="interest3">
+          <div class="card ">
+            <div class="card-body">
+              <h2>School</h2>
+              <p>I am a senior at BYUI and am excited and nervous to only have 4 semesters left till I graduate</p>
+            </div>
+          </div>
+        </div>

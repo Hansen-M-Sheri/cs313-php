@@ -1,0 +1,10 @@
+
+.jumbotron{
+  text-align: center;
+  margin-bottom: 0px;
+  background-image: url(../images/typingOnLaptop.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  text-shadow: black 0.2em 0.2em 0.3em;
+}
