@@ -35,3 +35,19 @@
   color: #fff;
   text-decoration: none;
 }
+.container:hover .text {
+  opacity: 1;
+}
+
+
+.text {
+  color: #cdcdcd;
+  font-size: 3em;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  
+}
