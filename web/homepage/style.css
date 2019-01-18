@@ -35,8 +35,11 @@
   color: #fff;
   text-decoration: none;
 }
-.container:hover .text {
+.topImg:hover .text {
   opacity: 1;
+}
+.topImg:hover .card-img-top{
+  opacity: .3;
 }
 
 
