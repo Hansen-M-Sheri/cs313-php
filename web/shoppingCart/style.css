@@ -1,0 +1,64 @@
+/* Styles go here */
+body{
+  padding: 20px;
+
+}
+a{
+  text-decoration: none;
+}
+
+.jumbotron{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card-title{
+  text-align: left;
+}
+.card-subtitle{
+  text-align: left;
+}
+.card-text{
+  font-size: .8em;
+  text-align: justify;
+}
+
+
+.card {
+  /*flex-md-row mb-4 box-shadow h-md-250*/
+  display: flex;
+  margin-bottom: 4px;
+  width: 18rem;
+  
+}
+.card-img-top{
+  height: 225px;
+  width: 100%;
+  display: block;
+}
+
+.card-body{
+  height: 200px;
+  overflow: auto;
+  text-align: center;
+  
+}
+.
+.assignCard-title{
+  color: #fff;
+  text-decoration: none;
+}
+
+
+
+.text {
+  color: black;
+  font-size: 3em;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  
+}
