@@ -66,7 +66,7 @@ elseif (isset($_POST['submitSignup'])){
 			}
 			else {
 				//verify email exists in db
-				$stmt = $db->prepare("SELECT * FROM users WHERE users.email = '$email'");
+				$stmt = $db->prepare("SELECT * FROM user WHERE users.email = '$email'");
 				$stmt->execute();
 				$rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
 				if ($rows > 0 ){
@@ -76,7 +76,7 @@ elseif (isset($_POST['submitSignup'])){
 				else {
 					$hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 					//insert user into database
-					$sql = 'INSERT INTO users (fName, lName, email, pwd, secret1, secret2) VALUES (:fName, :lName, :email, :hashedPwd, :secret1, :secret2)';
+					$sql = 'INSERT INTO user (fName, lName, email, pwd, secret1, secret2) VALUES (:fName, :lName, :email, :hashedPwd, :secret1, :secret2)';
 					$stmt = $db->prepare($sql);
 
 					//pass values to statement
@@ -89,7 +89,7 @@ elseif (isset($_POST['submitSignup'])){
 					
 					$stmt->execute();
 
-					echo $db->lastInsertID('users_id_seq');
+					echo $db->lastInsertID('user_id_seq');
 
 				}
 				// foreach ($rows as $key => $value) {
