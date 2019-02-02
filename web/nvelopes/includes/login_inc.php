@@ -97,7 +97,7 @@ elseif (isset($_POST['submitSignup'])){
 		// 		// }
 		// 		echo var_dump($rows);
 
-			}
+			// }
 		}
 		
 else{
