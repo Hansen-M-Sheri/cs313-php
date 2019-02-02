@@ -1,8 +1,12 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+include_once 'dbh.php';
 
 //if user has clicked submit button run this file
 if(isset($_POST['submitLogin'])){
-	include_once 'dbh.php';
+	
 
 	$email = htmlspecialchars($_POST['email']);
 	$pwd = htmlspecialchars($_POST['pwd']);
@@ -21,9 +25,9 @@ if(isset($_POST['submitLogin'])){
 		}
 		else{
 			//verify email exists in db
-			$stmt = $db->prepare("SELECT email FROM users WHERE EXISTS users.email = '$email'");
-			$stmt->execute();
-			$rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
+			// $stmt = $db->prepare("SELECT email FROM users WHERE EXISTS users.email = '$email'");
+			// $stmt->execute();
+			// $rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
 			// foreach ($rows as $key => $value) {
 			// 	# code...
 			// }
@@ -32,7 +36,6 @@ if(isset($_POST['submitLogin'])){
 
 }
 elseif (isset($_POST['submitSignup'])){
-	include_once 'dbh.php';
 
 	$fName = htmlspecialchars($_POST['fName']);
 	$lName = htmlspecialchars($_POST['lName']);
@@ -45,7 +48,7 @@ elseif (isset($_POST['submitSignup'])){
 
 	//Error handling
 	//Check for empty fields
-	if(empty($fName)) || (empty($lName) || empty($email)) || (empty($pwd) || empty($secret1)) || (empty($secret2)){
+	if(empty($fName) || empty($lName) || empty($email) || empty($pwd) || empty($secret1) || empty($secret2)){
 		header("Location: ../login.php?login=empty");
 		exit();
 	}
