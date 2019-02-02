@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-include 'dbh.php';
+include 'dbh_inc.php';
 
 //if user has clicked submit button run this file
 if(isset($_POST['submitLogin'])){
