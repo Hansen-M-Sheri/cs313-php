@@ -99,6 +99,8 @@ elseif (isset($_POST['submitSignup'])){
 
 			}
 		}
+	}
+}
 		
 else{
 	header("Location: ../login.php");
