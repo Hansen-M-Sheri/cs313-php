@@ -50,36 +50,30 @@ elseif (isset($_POST['submitSignup'])){
 	//Check for empty fields
 	if(empty($fName) || empty($lName) || empty($email) || empty($pwd) || empty($secret1) || empty($secret2)){
 		header("Location: ../login.php?login=empty");
-		echo var_dump(__LINE__);
 		exit();
 	}
 	else{
 		//check if input characters are valid
 		if(!preg_match("/^[a-zA-Z]*$", $fName) || !preg_match("/^[a-zA-Z]*$", $lName)){
 			header("Location: ../login.php?login=invalidName");
-			echo var_dump(__LINE__);
 			exit();
 		}
 		else{
 			//check if email is valid 
 			if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 				header("Location: ../login.php?login=email");
-				echo var_dump(__LINE__);
 				exit();
 			}
 			else {
-				echo var_dump(__LINE__);
 				//verify email exists in db
 				$stmt = $db->prepare("SELECT * FROM users WHERE users.email = '$email'");
 				$stmt->execute();
 				$rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
 				if ($rows > 0 ){
-					echo var_dump(__LINE__);
 					header("Location: ../login.php?signup=userTaken");
 					exit();
 				} 
 				else {
-					echo var_dump(__LINE__);
 					$hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 					//insert user into database
 					$sql = 'INSERT INTO users (fName, lName, email, pwd, secret1, secret2) VALUES (:fName, :lName, :email, :hashedPwd, :secret1, :secret2)';
