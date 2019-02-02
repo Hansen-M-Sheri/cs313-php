@@ -13,7 +13,7 @@ if(isset($_POST['submitLogin'])){
 
 	//Error handling
 	//Check for empty fields
-	if(empty($email)) || (empty($pwd)){
+	if(empty($email) || empty($pwd)){
 		header("Location: ../login.php?login=empty");
 	}
 	else{
