@@ -78,7 +78,7 @@ elseif (isset($_POST['submitSignup'])){
 				// else {
 					$hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 					//insert user into database
-					$sql = 'INSERT INTO public.user (fName, lName, email, pwd, secret1, secret2) VALUES (:fName, :lName, :email, :hashedPwd, :secret1, :secret2)';
+					$sql = 'INSERT INTO public.user (fName, lName, email, password, secret1, secret2) VALUES (:fName, :lName, :email, :hashedPwd, :secret1, :secret2)';
 					$stmt = $db->prepare($sql);
 
 					//pass values to statement
