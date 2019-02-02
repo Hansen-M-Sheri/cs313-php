@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-include_once 'dbh.php';
+include 'dbh.php';
 
 //if user has clicked submit button run this file
 if(isset($_POST['submitLogin'])){
@@ -37,22 +37,22 @@ if(isset($_POST['submitLogin'])){
 }
 elseif (isset($_POST['submitSignup'])){
 
-	$fName = htmlspecialchars($_POST['fName']);
-	$lName = htmlspecialchars($_POST['lName']);
-	$email = htmlspecialchars($_POST['email']);
-	$pwd   = htmlspecialchars($_POST['pwd']);
-	// $secret1 = htmlspecialchars($_POST['pwd']);
-	// $secret2 = htmlspecialchars($_POST['pwd']);
-	$secret1 = "secret 1";
-	$secret2 = "secret 2";
+	// $fName = htmlspecialchars($_POST['fName']);
+	// $lName = htmlspecialchars($_POST['lName']);
+	// $email = htmlspecialchars($_POST['email']);
+	// $pwd   = htmlspecialchars($_POST['pwd']);
+	// // $secret1 = htmlspecialchars($_POST['pwd']);
+	// // $secret2 = htmlspecialchars($_POST['pwd']);
+	// $secret1 = "secret 1";
+	// $secret2 = "secret 2";
 
-	//Error handling
-	//Check for empty fields
-	if(empty($fName) || empty($lName) || empty($email) || empty($pwd) || empty($secret1) || empty($secret2)){
-		header("Location: ../login.php?login=empty");
-		exit();
-	}
-	else{
+	// //Error handling
+	// //Check for empty fields
+	// if(empty($fName) || empty($lName) || empty($email) || empty($pwd) || empty($secret1) || empty($secret2)){
+	// 	header("Location: ../login.php?login=empty");
+	// 	exit();
+	// }
+	// else{
 		// //check if input characters are valid
 		// if(!preg_match("/^[a-zA-Z]*$", $fName) || !preg_match("/^[a-zA-Z]*$", $lName)){
 		// 	header("Location: ../login.php?login=invalidName");
