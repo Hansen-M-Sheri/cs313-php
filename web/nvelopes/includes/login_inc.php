@@ -65,20 +65,20 @@ elseif (isset($_POST['submitSignup'])){
 				exit();
 			}
 			else {
-				echo $email;
-				//verify email exists in db
-				$stmt = $db->prepare('SELECT * FROM user WHERE email=:email');
-				$stmt->bindValue(':email', $email);
-				$stmt->execute();
-				$rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
-				if ($rows > 0 ){
-					header("Location: ../login.php?signup=userTaken");
-					exit();
-				} 
-				else {
+				// echo $email;
+				// //verify email exists in db
+				// $stmt = $db->prepare('SELECT * FROM public.user WHERE email=:email');
+				// $stmt->bindValue(':email', $email);
+				// $stmt->execute();
+				// $rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
+				// if ($rows > 0 ){
+				// 	header("Location: ../login.php?signup=userTaken");
+				// 	exit();
+				// } 
+				// else {
 					$hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 					//insert user into database
-					$sql = 'INSERT INTO user (fName, lName, email, pwd, secret1, secret2) VALUES (:fName, :lName, :email, :hashedPwd, :secret1, :secret2)';
+					$sql = 'INSERT INTO public.user (fName, lName, email, pwd, secret1, secret2) VALUES (:fName, :lName, :email, :hashedPwd, :secret1, :secret2)';
 					$stmt = $db->prepare($sql);
 
 					//pass values to statement
@@ -93,7 +93,7 @@ elseif (isset($_POST['submitSignup'])){
 
 					echo $db->lastInsertID('user_id_seq');
 
-				}
+				// }
 				// foreach ($rows as $key => $value) {
 				// 	# code...
 				// }
