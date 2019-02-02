@@ -5,6 +5,7 @@ if(isset($_POST['submitLogin'])){
 	include_once 'dbh.php';
 
 	$email = $_POST['email'];
+	echo $email;
 }
 elseif (isset($_POST['submitSignup'])){
 
