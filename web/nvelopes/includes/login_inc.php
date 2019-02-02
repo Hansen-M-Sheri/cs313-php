@@ -54,7 +54,7 @@ elseif (isset($_POST['submitSignup'])){
 	}
 	else{
 		//check if input characters are valid
-		if(!preg_match("/^[a-zA-Z]*$", $fName) || !preg_match("/^[a-zA-Z]*$", $lName)){
+		if(!preg_match("/[^a-zA-Z\s-]/i", $fName) || !preg_match("/[^a-zA-Z\s-]/i", $lName)){
 			header("Location: ../login.php?login=invalidName");
 			exit();
 		}
