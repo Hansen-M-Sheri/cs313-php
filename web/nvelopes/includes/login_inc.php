@@ -73,9 +73,20 @@ elseif (isset($_POST['submitSignup'])){
 				else {
 					$hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 					//insert user into database
-					$sql = "INSERT INTO users (fName, lName, email, pwd, secret1, secret2) VALUES ('$fName', '$lName', '$email', '$hashedPwd', '$secret1', '$secret2');";
+					$sql = 'INSERT INTO users (fName, lName, email, pwd, secret1, secret2) VALUES (:fName, :lName, :email, :hashedPwd, :secret1, :secret2)';
 					$stmt = $db->prepare($sql);
+
+					//pass values to statement
+					$stmt->bindValue(':fName', $fName);
+					$stmt->bindValue(':lName', $lName);
+					$stmt->bindValue(':email', $email);
+					$stmt->bindValue(':hashedPwd', $hashedPwd);
+					$stmt->bindValue(':secret1', $secret1);
+					$stmt->bindValue(':secret2', $secret2);
+					
 					$stmt->execute();
+
+					echo $db->lastInsertID('users_id_seq');
 
 				}
 				// foreach ($rows as $key => $value) {
