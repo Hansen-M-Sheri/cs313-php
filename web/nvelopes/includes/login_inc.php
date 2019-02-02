@@ -66,7 +66,7 @@ elseif (isset($_POST['submitSignup'])){
 			}
 			else {
 				//verify email exists in db
-				$stmt = $db->prepare("SELECT * FROM user WHERE users.email = '$email'");
+				$stmt = $db->prepare("SELECT * FROM user WHERE user.email = '$email'");
 				$stmt->execute();
 				$rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
 				if ($rows > 0 ){
