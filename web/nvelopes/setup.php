@@ -1,9 +1,27 @@
-<?php include "templates/header.php";?>
+<?php 
+session_start();
+include "templates/header.php";
+if(!isset($_SESSION['userID'])){
+	header("Location: login.php?login=noAuth");
+	exit();
+?>
 	
 	<title>LOGIN to Nvelopes</title>
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
+	<header>
+		<nav>
+			<div class="navBar">
+				<ul>
+					<li><a href="login.php">Home</a></li>
+				</ul>
+				<form action="includes/logout.php" method="post">
+					<button type="submit" name="logout">Logout</button>
+				</form>
+			</div>
+		</nav>
+	</header>
 	<div class="row col-md-8">
 			<ul class="nav nav-tab">
 				<li><a data-toggle="tab" href="#menu1" class="btn btn-dark btn-tab">View Envelopes</a></li>

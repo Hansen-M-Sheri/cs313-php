@@ -1,4 +1,5 @@
 <?php
+session_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -22,15 +23,33 @@ if(isset($_POST['submitLogin'])){
 		//check if email is valid
 		if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 			header("Location: ../login.php?login=email");
+			exit();
 		}
 		else{
 			//verify email exists in db
-			// $stmt = $db->prepare("SELECT email FROM users WHERE EXISTS users.email = '$email'");
-			// $stmt->execute();
-			// $rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
-			// foreach ($rows as $key => $value) {
-			// 	# code...
-			// }
+			$stmt = $db->prepare('SELECT email FROM public.user WHERE email=:email');
+			$stmt->bindValue(':email', $email);
+			$stmt->execute();
+			$row = $stmt->fetchALL(PDO::FETCH_ASSOC);
+			if($row  < 1){ //not found
+				header("Location: ../login.php?login=signup");
+				exit();
+			}
+			else {
+				//compare password
+				//dehash password
+				$hashedPwdCheck = password_verify($pwd, $row['password']);
+				if($hashedPwdCheck == false){
+					header("Location: ../login.php?login=error");
+						exit();
+				} elseif ($hashedPwdCheck == true) {
+					//Log in the user here
+					$_SESSION['id'] = $row['id'];
+					
+				}
+				
+
+			}
 		}
 	}
 
@@ -65,7 +84,7 @@ elseif (isset($_POST['submitSignup'])){
 				exit();
 			}
 			else {
-				// echo $email;
+				
 				//verify email exists in db
 				$stmt = $db->prepare('SELECT email FROM public.user WHERE email=:email');
 				$stmt->bindValue(':email', $email);
@@ -92,6 +111,10 @@ elseif (isset($_POST['submitSignup'])){
 					$stmt->execute();
 
 					echo $db->lastInsertID('user_id_seq');
+					//store id in sessions 
+					$_SESSION['id'] = $row['id'];
+					header("Location: ../setup.php");
+					exit();
 
 				}
 				// foreach ($rows as $key => $value) {
