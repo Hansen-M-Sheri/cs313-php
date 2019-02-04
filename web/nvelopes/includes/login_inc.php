@@ -66,16 +66,16 @@ elseif (isset($_POST['submitSignup'])){
 			}
 			else {
 				// echo $email;
-				// //verify email exists in db
-				// $stmt = $db->prepare('SELECT * FROM public.user WHERE email=:email');
-				// $stmt->bindValue(':email', $email);
-				// $stmt->execute();
-				// $rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
-				// if ($rows > 0 ){
-				// 	header("Location: ../login.php?signup=userTaken");
-				// 	exit();
-				// } 
-				// else {
+				//verify email exists in db
+				$stmt = $db->prepare('SELECT email FROM public.user WHERE email=:email');
+				$stmt->bindValue(':email', $email);
+				$stmt->execute();
+				$rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
+				if ($rows > 0 ){
+					header("Location: ../login.php?signup=userTaken");
+					exit();
+				} 
+				else {
 					$hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 					//insert user into database
 					$sql = 'INSERT INTO public.user (fName, lName, email, password, secretquestion1answer, secretquestion2answer) VALUES (:fName, :lName, :email, :hashedPwd, :secret1, :secret2)';
@@ -93,11 +93,11 @@ elseif (isset($_POST['submitSignup'])){
 
 					echo $db->lastInsertID('user_id_seq');
 
-				// }
+				}
 				// foreach ($rows as $key => $value) {
 				// 	# code...
 				// }
-				echo var_dump($rows);
+				// echo var_dump($rows);
 
 			}
 		}
