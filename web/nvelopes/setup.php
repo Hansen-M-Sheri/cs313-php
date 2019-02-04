@@ -1,5 +1,5 @@
 <?php 
-session_start();
+// session_start();
 include "templates/header.php";
 if(!isset($_SESSION['userID'])){
 	header("Location: login.php?login=noAuth");
