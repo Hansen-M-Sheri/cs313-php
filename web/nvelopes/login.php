@@ -9,20 +9,14 @@
 			<div class="navBar">
 				<ul>
 					<li><a href="login.php">Home</a></li>
+					
 				</ul>
-				<div class="nav-login">
-					<form action="includes/login_inc.php" method="POST" >
-						<input type="text" placeholder="Email" name="email"  required>
-						<input type="password" placeholder="Password" name="pwd" required>
-						<button type="submit" name="submitLogin" class="btn btn-primary btn-sm">Login</button>
-					</form>	
-				</div>
 			</div>
 		</nav>
 	</header>
 	<div class="row col-md-8">
 
-			<!-- <ul class="nav nav-tab">
+			<ul class="nav nav-tab">
 				<li><a data-toggle="tab" href="#menu1" class="btn btn-dark btn-tab">Login</a></li>
 				<li><a data-toggle="tab" href="#menu2" class="btn btn-dark btn-tab">Signup</a></li>
 			</ul>
@@ -36,7 +30,7 @@
 					</form>	
 					<center><a href="#">Forgot Password</a></center>
 				</div>
-				<div id="menu2" class="tab-pane fade"> -->
+				<div id="menu2" class="tab-pane fade">
 					<form class="form-group col-md-6" action="includes/login_inc.php" method="POST">
 						<center><h2>Signup</h2></center><br>
 						<input type="text" placeholder="First Name" name="fName" class="form-control" required><br>
