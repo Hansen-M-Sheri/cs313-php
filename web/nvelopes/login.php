@@ -12,10 +12,9 @@
 				</ul>
 				<div class="nav-login">
 					<form action="includes/login_inc.php" method="POST" >
-						<center><h2>Login</h2></center><br>
 						<input type="text" placeholder="Email" name="email"  required>
 						<input type="password" placeholder="Password" name="pwd" required>
-						<input type="submit" name="submitLogin" class="btn btn-primary btn-block">
+						<button type="submit" name="submitLogin" class="btn btn-primary btn-block">Login></button>
 					</form>	
 				</div>
 			</div>
