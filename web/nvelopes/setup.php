@@ -1,9 +1,9 @@
 <?php 
 // session_start();
 include "templates/header.php";
-if(!isset($_SESSION['userID'])){
-	header("Location: login.php?login=noAuth");
-	exit();
+// if(!isset($_SESSION['userID'])){
+// 	header("Location: login.php?login=noAuth");
+// 	exit();
 ?>
 	
 	<title>LOGIN to Nvelopes</title>
