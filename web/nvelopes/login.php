@@ -14,7 +14,7 @@
 					<form action="includes/login_inc.php" method="POST" >
 						<input type="text" placeholder="Email" name="email"  required>
 						<input type="password" placeholder="Password" name="pwd" required>
-						<button type="submit" name="submitLogin" class="btn btn-primary btn-block">Login></button>
+						<button type="submit" name="submitLogin" class="btn btn-primary btn-sm">Login</button>
 					</form>	
 				</div>
 			</div>
