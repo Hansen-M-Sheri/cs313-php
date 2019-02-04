@@ -11,10 +11,10 @@
 					<li><a href="login.php">Home</a></li>
 				</ul>
 				<div class="nav-login">
-					<form class="form-group col-md-6"action="includes/login_inc.php" method="POST" >
+					<form action="includes/login_inc.php" method="POST" >
 						<center><h2>Login</h2></center><br>
-						<input type="text" placeholder="Email" name="email" class="form-control" required><br>
-						<input type="password" placeholder="Password" name="pwd" class="form-control" required><br>
+						<input type="text" placeholder="Email" name="email"  required>
+						<input type="password" placeholder="Password" name="pwd" required>
 						<input type="submit" name="submitLogin" class="btn btn-primary btn-block">
 					</form>	
 				</div>
