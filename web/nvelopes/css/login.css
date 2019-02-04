@@ -11,10 +11,31 @@
 	justify-content: center
 }*/
 .navBar {
+	margin: 0 auto;
+	width: 1000px;
 	text-decoration: none;
 }
 .navlogin{
 	float: left;
+}
+header nav-login {
+	float: right;
+}
+header .nav-login form {
+	float: left;
+	padding-top: 15px;
+}
+
+header .nav-login form input{
+	float: left;
+	width: 140px;
+	height: 30px;
+	padding:0px 10px;
+	margin-right: 10px;
+	border: none;
+	background-color: #ccc
+	font-size: 1em;
+	line-height: 30px;
 }
 .row {
 	margin-left: 25%;
