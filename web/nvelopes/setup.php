@@ -46,7 +46,7 @@ include "templates/header.php";
 					
 				</div>
 				<div id="menu2" class="tab-pane fade">
-					<form id="createEnvelope"action="#" class="form-group col-md-6">
+					<form id="createEnvelope"action="includes/envelope_inc.php" method="post" class="form-group col-md-6">
 						<center><h2>Create Envelope</h2></center><br>
 						<input type="text" placeholder="Envelope Name" name="name" class="form-control" required><br>
 						<input type="text" placeholder="Description" name="desc" class="form-control" required><br>
@@ -55,7 +55,7 @@ include "templates/header.php";
 						<p>If envelope total drops below warning value, envelope will turn red</p><br>
 						<input type="color" placeholder="" name="color" class="form-control" required>
 						<p>Select color for envelope. **</p><br>
-						<input type="submit" name="submitLogin" class="btn btn-primary btn-block">
+						<input type="submit" name="createEnvelope" class="btn btn-primary btn-block">
 					</form>	
 				</div>
 			</div>

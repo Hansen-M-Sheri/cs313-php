@@ -31,7 +31,13 @@ if(isset($_POST['createEnvelope'])){
 			$stmt->bindValue(':warningamount', $warningAmt);
 			$stmt->bindValue(':color', $color);
 			$stmt->execute();
-			echo $db->lastInsertID('envelope_id_seq');
+			$newItemID =  $db->lastInsertID('envelope_id_seq');
+			if($newItemID < 1){
+				header("Location: ../setup.php?create=error");
+			} else {
+				header("Location: ../setup.php?create=success");
+			}
+			
 }
 
 
