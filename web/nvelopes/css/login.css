@@ -10,7 +10,12 @@
 .row{
 	justify-content: center
 }*/
-
+.navBar {
+	text-decoration: none;
+}
+.navlogin{
+	float: left;
+}
 .row {
 	margin-left: 25%;
 	margin-top: 10%; 
