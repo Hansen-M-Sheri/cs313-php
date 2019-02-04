@@ -37,6 +37,8 @@ if(isset($_POST['createEnvelope'])){
 			} else {
 				header("Location: ../setup.php?create=success");
 			}
+		}
+	}
 			
 }
 
