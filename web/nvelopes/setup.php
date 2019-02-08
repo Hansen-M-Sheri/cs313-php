@@ -8,6 +8,7 @@ if(!isset($_SESSION['userID'])){
 }
 else {
 	//query for envelopes and display them
+	echo "test";
 	$sql = 'SELECT
 			 envelopeid,
 			 SUM (amount) AS total
