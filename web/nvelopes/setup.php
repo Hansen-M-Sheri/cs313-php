@@ -1,7 +1,7 @@
 <?php 
 session_start();
-echo var_dump($_SESSION);
-die();
+// echo var_dump($_SESSION);
+// die();
 include "templates/header.php";
 if(!isset($_SESSION['userID'])){
 	header("Location: login.php?login=noAuth");
