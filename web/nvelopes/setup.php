@@ -21,7 +21,7 @@ else {
 	$stmt->bindValue(':userID', $_SESSION['userID']);
 	$stmt->execute();
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
-	echo print_r($rowsArray);
+	echo var_dump($rowsArray[0]);
 }
 ?>
 	
