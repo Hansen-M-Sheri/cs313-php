@@ -10,6 +10,8 @@ else {
 	//query for envelopes and display them
 	echo "test";
 	$sql = ' SELECT
+				 envelope.id,
+				 color,
 				 name,
 				 SUM (amount) AS total
 				FROM
@@ -19,7 +21,7 @@ else {
 				 WHERE
 				 userid = :userID
 				GROUP BY
-				 name;';
+				 name, envelope.id;';
 	// echo $sql;
 	$stmt = $db->prepare($sql);
 	$stmt->bindValue(':userID', $_SESSION['userID']);
