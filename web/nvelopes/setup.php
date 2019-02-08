@@ -9,27 +9,29 @@ if(!isset($_SESSION['userID'])){
 else {
 	//query for envelopes and display them
 	echo "test";
-	$sql = 'SELECT
-			 envelopeid,
-			 SUM (amount) AS total
-			FROM
-			 public.transaction
-			 WHERE
-			 userid=:userID
-			GROUP BY
-			 envelopeid';
+	$sql = ' SELECT
+				 name,
+				 SUM (amount) AS total
+				FROM
+				 public.transaction
+				 INNER JOIN public.envelope
+				 ON transaction.envelopeid = envelope.id
+				 WHERE
+				 userid = 1
+				GROUP BY
+				 name;';
 	// echo $sql;
 	$stmt = $db->prepare($sql);
 	$stmt->bindValue(':userID', 1);
 	$stmt->execute();
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
-	echo "test 2";
-	echo count($rowsArray);
-	foreach ($rowsArray as $row) {
-		echo $row['envelopeid'];
-		echo $row['total'];
-		echo '<br>';
-	}
+	// echo "test 2";
+	// echo count($rowsArray);
+	// foreach ($rowsArray as $row) {
+	// 	echo $row['envelopeid'];
+	// 	echo $row['total'];
+	// 	echo '<br>';
+	// }
 }
 ?>
 	
@@ -49,23 +51,29 @@ else {
 			</div>
 		</nav>
 	</header>
+
 	<div class="row col-md-8">
-			<ul class="nav nav-tab">
-				<li><a data-toggle="tab" href="#menu1" class="btn btn-dark btn-tab">View Envelopes</a></li>
-				<li><a data-toggle="tab" href="#menu2" class="btn btn-dark btn-tab">Create Envelope</a></li>
-			</ul>
-			<div class="tab-content" style="">
-				<div id="menu1" class="tab-pane">
+		<ul class="nav nav-tab">
+			<li><a data-toggle="tab" href="#menu1" class="btn btn-dark btn-tab">View Envelopes</a></li>
+			<li><a data-toggle="tab" href="#menu2" class="btn btn-dark btn-tab">Create Envelope</a></li>
+		</ul>
+		<div class="tab-content" style="">
+			<div id="menu1" class="tab-pane">
+				<?php
+					foreach ($rowsArray as $row) { ?>
+						<div class="row">
+					      <div class="col-md-3 ">
+					        <div class="card-container">
+					        	<i class="far fa-envelope fa-8x icon"></i>
+					          <div class="card-body">
+					            <h4><?php $row['name']?></h4>
+					            <h4><?php $row['total']?></h4>
+					          </div><!--body-->
+					        </div><!--card-->
+					}
+				?>
 					<!-- Cards -->
-    <div class="row">
-      <div class="col-md-3 ">
-        <div class="card-container">
-        	<i class="far fa-envelope fa-8x icon"></i>
-          <div class="card-body">
-            <h4>ENVELOPE NAME</h4>
-            <h4>TOTAL</h4>
-          </div><!--body-->
-        </div><!--card-->
+    
       </div><!--column-->
       
       
