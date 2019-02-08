@@ -20,7 +20,7 @@ else {
 			 envelopeid';
 	// echo $sql;
 	$stmt = $db->prepare($sql);
-	$stmt->bindValue(':userID', $_SESSION['userID']);
+	$stmt->bindValue(':userID', 1);
 	$stmt->execute();
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
 	echo count($rowsArray);
