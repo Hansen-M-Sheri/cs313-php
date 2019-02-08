@@ -15,7 +15,7 @@ else {
 			 WHERE
 			 userid=:userID
 			GROUP BY
-			 envelopeid;'
+			 envelopeid;';
 	$stmt = $db->prepare($sql);
 	$stmt->bindValue(':userID', $_SESSION['userID']);
 	$stmt->execute();
