@@ -55,14 +55,18 @@ else {
 		</nav>
 	</header>
 
-	<div class="row col-md-8">
-		<ul class="nav nav-tab">
-			<li><a data-toggle="tab" href="#menu1" class="btn btn-dark btn-tab">View Envelopes</a></li>
-			<li><a data-toggle="tab" href="#menu2" class="btn btn-dark btn-tab">Create Envelope</a></li>
-			<li><a data-toggle="tab" href="#transactions" class="btn btn-dark btn-tab">Transactions</a></li>
-		</ul>
-		<div class="tab-content" style="">
-			<div id="menu1" class="tab-pane">
+	<div class="container">
+	  <h2>Dynamic Tabs</h2>
+	  <p>The <strong>show</strong> method shows the tab.</p>
+	  <ul class="nav nav-tabs">
+	    <li class="active"><a href="#view">View Envelopes</a></li>
+	    <li><a href="#create">Create Envelopes</a></li>
+	    <li><a href="#transaction">View Transactions</a></li>
+	    
+	  </ul>
+		<div class="tab-content">
+    		<div id="view" class="tab-pane fade in active">
+      			<h3>Envelopes</h3>
 				<?php
 					foreach ($rowsArray as $row) { ?>
 						<div class="row">
@@ -76,19 +80,17 @@ else {
 					            <!-- <button type="button" class="btn-primary btn-xs" onclick="<?php $envelopeName = $row['name'] ?>"><a href="transactions">+/-</a></button> -->
 					          </div><!--body-->
 					        </div><!--card-->
-				<?php	}
-				?>
+					<?php	}
+					?> 
 					<!-- Cards -->
     
-      </div><!--column-->
-      
-      
-  </div><!--row-->
-					
-				</div>
-				<div id="menu2" class="tab-pane fade">
-					<form id="createEnvelope"action="includes/envelope_inc.php" method="post" class="form-group col-md-6">
-						<center><h2>Create Envelope</h2></center><br>
+      					  </div><!--column-->
+      					</div><!--row-->
+					</div>
+				<div class="tab-content">
+    				<div id="view" class="tab-pane fade in active">
+      					<h3>Envelopes</h3>
+						<br>
 						<input type="text" placeholder="Envelope Name" name="name" class="form-control" required><br>
 						<input type="text" placeholder="Description" name="desc" class="form-control" required><br>
 						
@@ -100,9 +102,10 @@ else {
 					</form>	
 				</div>
 			</div>
-			<div id="transaction" class="tab-pane fade">
-					<form id="transaction"action="includes/envelope_inc.php" method="post" class="form-group col-md-6">
-						<center><h2>Transactions</h2></center><br>
+			<div class="tab-content">
+    			<div id="view" class="tab-pane fade in active">
+      				<h3>Transactions</h3>
+						<br>
 						<label for="name">Name of Envelope to Add Transaction</label>
 						<input type="text" placeholder="Envelope Name" name="name" class="form-control" required><br>
 						
