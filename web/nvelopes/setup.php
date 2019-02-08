@@ -46,9 +46,8 @@ else {
 		<nav>
 			<div class="navBar">
 				<ul>
-					<li class="active"><a href="#view">View Envelopes</a></li>
-	    			<li><a href="#create">Create Envelopes</a></li>
-	    			<li><a href="#transaction">View Transactions</a></li>
+					<li><a href="login.php">Home</a></li>
+					
 				</ul>
 				<form action="includes/logout.php" method="post">
 					<button type="submit" name="logout">Logout</button>
@@ -56,6 +55,15 @@ else {
 			</div>
 		</nav>
 	</header>
+	<div class="container">
+	  <h2>Dynamic Tabs</h2>
+	  <p>The <strong>show</strong> method shows the tab.</p>
+	  <ul class="nav nav-tabs">
+	    <li class="active"><a href="#view">Envelopes</a></li>
+	    <li><a href="#create">Create Envelopes</a></li>
+	    <li><a href="#transaction">Transactions</a></li>
+	    
+	  </ul>
 	<div class="tab-content">
     	<div id="home" class="tab-pane fade in active">
             <h3>Envelopes</h3>
@@ -105,7 +113,7 @@ else {
     </div>
     
   </div>
-
+</div>
 <script>
 $(document).ready(function(){
   $(".nav-tabs a").click(function(){
