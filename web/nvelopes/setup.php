@@ -91,7 +91,7 @@ else {
       					</div><!--row-->
 					</div>
 				<div class="tab-content">
-    				<div id="view" class="tab-pane fade in active">
+    				<div id="create" class="tab-pane fade in active">
       					<h3>Envelopes</h3>
 						<br>
 						<input type="text" placeholder="Envelope Name" name="name" class="form-control" required><br>
@@ -106,7 +106,7 @@ else {
 				</div>
 			</div>
 			<div class="tab-content">
-    			<div id="view" class="tab-pane fade in active">
+    			<div id="transaction" class="tab-pane fade in active">
       				<h3>Transactions</h3>
 						<br>
 						<label for="name">Name of Envelope to Add Transaction</label>
