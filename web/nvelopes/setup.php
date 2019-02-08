@@ -67,10 +67,11 @@ else {
 					      <div class="col-md-3 ">
 					        <div class="card-container">
 					        	
-					        	<i class="far fa-envelope fa-8x icon" style="background: <?php echo$row['color']?>"></i>
+					        	<i class="far fa-envelope fa-6x icon" style="background: <?php echo$row['color']?>"></i>
 					          <div class="card-body">
 					            <h4><?php echo $row['name']?></h4>
 					            <h4><?php echo $row['total']?></h4>
+					            <button type="button" class="btn-primary btn-xs">+/-</button>
 					          </div><!--body-->
 					        </div><!--card-->
 				<?php	}
