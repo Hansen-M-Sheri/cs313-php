@@ -70,7 +70,7 @@ else {
 					            <h4><?php $row['total']?></h4>
 					          </div><!--body-->
 					        </div><!--card-->
-					}
+				<?php	}
 				?>
 					<!-- Cards -->
     
