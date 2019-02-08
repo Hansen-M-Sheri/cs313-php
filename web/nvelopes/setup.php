@@ -23,6 +23,7 @@ else {
 	$stmt->bindValue(':userID', 1);
 	$stmt->execute();
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
+	echo "test 2";
 	echo count($rowsArray);
 	foreach ($rowsArray as $row) {
 		echo $row['envelopeid'];
