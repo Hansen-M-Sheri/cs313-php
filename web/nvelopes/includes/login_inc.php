@@ -32,7 +32,7 @@ if(isset($_POST['submitLogin'])){
 			$stmt->execute();
 			$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC); //this returns array
 			echo print_r($rowsArray);
-			if(count($rowsArray  < 1)){ //not found
+			if(count($rowsArray)  < 1){ //not found
 				header("Location: ../login.php?login=signup");
 				exit();
 			}
