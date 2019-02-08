@@ -31,6 +31,7 @@ if(isset($_POST['submitLogin'])){
 			$stmt->bindValue(':email', $email);
 			$stmt->execute();
 			$row = $stmt->fetchALL(PDO::FETCH_ASSOC);
+
 			if($row  < 1){ //not found
 				header("Location: ../login.php?login=signup");
 				exit();
@@ -45,7 +46,8 @@ if(isset($_POST['submitLogin'])){
 				} elseif ($hashedPwdCheck == true) {
 					//Log in the user here
 					$_SESSION['id'] = $row['id'];
-					
+					//send to setup page
+					header("Location: ../setup.php");
 				}
 				
 
@@ -112,7 +114,7 @@ elseif (isset($_POST['submitSignup'])){
 
 					echo $db->lastInsertID('user_id_seq');
 					//store id in sessions 
-					$_SESSION['id'] = $row['id'];
+					$_SESSION['userID'] = $row['id'];
 					header("Location: ../setup.php");
 					exit();
 
