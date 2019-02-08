@@ -1,9 +1,27 @@
 <?php 
 // session_start();
 include "templates/header.php";
-// if(!isset($_SESSION['userID'])){
-// 	header("Location: login.php?login=noAuth");
-// 	exit();
+if(!isset($_SESSION['userID'])){
+	header("Location: login.php?login=noAuth");
+	exit();
+}
+else {
+	//query for envelopes and display them
+	$sql = 'SELECT
+			 envelopeid,
+			 SUM (amount) AS total
+			FROM
+			 public.transaction
+			 WHERE
+			 userid=:userID
+			GROUP BY
+			 envelopeid;'
+	$stmt = $db->prepare($sql);
+	$stmt->bindValue(':userID', $_SESSION['userID']);
+	$stmt->execute();
+	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
+	echo print_r($rowsArray);
+}
 ?>
 	
 	<title>LOGIN to Nvelopes</title>
