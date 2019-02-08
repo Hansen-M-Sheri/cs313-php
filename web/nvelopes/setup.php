@@ -22,7 +22,11 @@ else {
 	$stmt->bindValue(':userID', $_SESSION['userID']);
 	$stmt->execute();
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
-	echo var_dump($rowsArray[0]);
+	foreach ($rowsArray as $row) {
+		echo $row['envelopeid'];
+		echo $row['total'];
+		echo '<br>';
+	}
 }
 ?>
 	
