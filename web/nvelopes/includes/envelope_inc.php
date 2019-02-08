@@ -23,12 +23,12 @@ if(isset($_POST['createEnvelope'])){
 			exit();
 		}
 		else{
-			$sql = 'INSERT INTO public.envelope (name, description, warningamount, color) VALUES (:name, :description, :warningAmt, :color)';
+			$sql = 'INSERT INTO public.envelope (name, description,  color, warningamount) VALUES (:name, :description, :color, :warningAmt)';
 			$stmt = $db->prepare($sql);
 
 			$stmt->bindValue(':name', $envelopeName);
 			$stmt->bindValue(':description', $description);
-			$stmt->bindValue(':warningamount', $warningAmt);
+			$stmt->bindValue(':warningAmt', $warningAmt);
 			$stmt->bindValue(':color', $color);
 			$stmt->execute();
 			$newItemID =  $db->lastInsertID('envelope_id_seq');
