@@ -40,16 +40,15 @@ else {
 	
 	<title>LOGIN to Nvelopes</title>
 	<link rel="stylesheet" type="text/css" href="css/login.css">
-	<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </head>
 <body>
 	<header>
 		<nav>
 			<div class="navBar">
 				<ul>
-					<li><a href="login.php">Home</a></li>
+					<li class="active"><a href="#view">View Envelopes</a></li>
+	    			<li><a href="#create">Create Envelopes</a></li>
+	    			<li><a href="#transaction">View Transactions</a></li>
 				</ul>
 				<form action="includes/logout.php" method="post">
 					<button type="submit" name="logout">Logout</button>
@@ -57,19 +56,9 @@ else {
 			</div>
 		</nav>
 	</header>
-
-	<div class="container">
-	  <h2>Dynamic Tabs</h2>
-	  <p>The <strong>show</strong> method shows the tab.</p>
-	  <ul class="nav nav-tabs">
-	    <li class="active"><a href="#view">View Envelopes</a></li>
-	    <li><a href="#create">Create Envelopes</a></li>
-	    <li><a href="#transaction">View Transactions</a></li>
-	    
-	  </ul>
-		<div class="tab-content">
-    		<div id="view" class="tab-pane fade in active">
-      			<h3>Envelopes</h3>
+	<div class="tab-content">
+    	<div id="home" class="tab-pane fade in active">
+            <h3>Envelopes</h3>
 				<?php
 					foreach ($rowsArray as $row) { ?>
 						<div class="row">
@@ -90,33 +79,39 @@ else {
       					  </div><!--column-->
       					</div><!--row-->
 					</div>
-				<div class="tab-content">
-    				<div id="create" class="tab-pane fade in active">
-      					<h3>Envelopes</h3>
-						<br>
-						<input type="text" placeholder="Envelope Name" name="name" class="form-control" required><br>
-						<input type="text" placeholder="Description" name="desc" class="form-control" required><br>
-						
-						<input type="number" placeholder="Warning amount ie: 5.00" name="warningAmount" class="form-control" required>
-						<p>If envelope total drops below warning value, envelope will turn red</p><br>
-						<input type="color" placeholder="" name="color" class="form-control" required>
-						<p>Select color for envelope. **</p><br>
-						<input type="submit" name="createEnvelope" class="btn btn-primary btn-block">
-					</form>	
-				</div>
+    
+    <div id="create" class="tab-pane fade">
+      <form id="createEnvelope"action="includes/envelope_inc.php" method="post" class="form-group col-md-6">
+					<h2>Create Envelope</h2><br>
+					<input type="text" placeholder="Envelope Name" name="name" class="form-control" required><br>
+					<input type="text" placeholder="Description" name="desc" class="form-control" required><br>
+					
+					<input type="number" placeholder="Warning amount ie: 5.00" name="warningAmount" class="form-control" required>
+					<p>If envelope total drops below warning value, envelope will turn red</p><br>
+					<input type="color" placeholder="" name="color" class="form-control" required>
+					<p>Select color for envelope. **</p><br>
+					<input type="submit" name="createEnvelope" class="btn btn-primary btn-block">
+				</form>	
 			</div>
-			<div class="tab-content">
-    			<div id="transaction" class="tab-pane fade in active">
-      				<h3>Transactions</h3>
-						<br>
-						<label for="name">Name of Envelope to Add Transaction</label>
-						<input type="text" placeholder="Envelope Name" name="name" class="form-control" required><br>
-						
-						<input type="submit" name="getTransactions" class="btn btn-primary btn-block">
-					</form>	
-				</div>
-			</div>
+			
+    <div id="transaction" class="tab-pane fade">
+      <form id="transaction"action="includes/envelope_inc.php" method="post" class="form-group col-md-6">
+			<center><h2>Transactions</h2></center><br>
+			<label for="name">Name of Envelope to Add Transaction</label>
+			<input type="text" placeholder="Envelope Name" name="name" class="form-control" required><br>
+			
+			<input type="submit" name="getTransactions" class="btn btn-primary btn-block">
+		</form>	
+    </div>
+    
+  </div>
 
-	</div>
+<script>
+$(document).ready(function(){
+  $(".nav-tabs a").click(function(){
+    $(this).tab('show');
+  });
+});
+</script>
 
 <?php include "templates/footer.php"; ?>
