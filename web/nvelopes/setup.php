@@ -47,7 +47,6 @@ else {
 			<div class="navBar">
 				<ul>
 					<li><a href="login.php">Home</a></li>
-					
 				</ul>
 				<form action="includes/logout.php" method="post">
 					<button type="submit" name="logout">Logout</button>
@@ -55,18 +54,15 @@ else {
 			</div>
 		</nav>
 	</header>
-	<div class="container">
-	  <h2>Dynamic Tabs</h2>
-	  <p>The <strong>show</strong> method shows the tab.</p>
-	  <ul class="nav nav-tabs">
-	    <li class="active"><a href="#view">Envelopes</a></li>
-	    <li><a href="#create">Create Envelopes</a></li>
-	    <li><a href="#transaction">Transactions</a></li>
-	    
-	  </ul>
-	<div class="tab-content">
-    	<div id="home" class="tab-pane fade in active">
-            <h3>Envelopes</h3>
+
+	<div class="row col-md-8">
+		<ul class="nav nav-tab">
+			<li><a data-toggle="tab" href="#menu1" class="btn btn-dark btn-tab">View Envelopes</a></li>
+			<li><a data-toggle="tab" href="#menu2" class="btn btn-dark btn-tab">Create Envelope</a></li>
+			<li><a data-toggle="tab" href="#transactions" class="btn btn-dark btn-tab">Transactions</a></li>
+		</ul>
+		<div class="tab-content" style="">
+			<div id="menu1" class="tab-pane">
 				<?php
 					foreach ($rowsArray as $row) { ?>
 						<div class="row">
@@ -80,46 +76,41 @@ else {
 					            <!-- <button type="button" class="btn-primary btn-xs" onclick="<?php $envelopeName = $row['name'] ?>"><a href="transactions">+/-</a></button> -->
 					          </div><!--body-->
 					        </div><!--card-->
-					<?php	}
-					?> 
+				<?php	}
+				?>
 					<!-- Cards -->
     
-      					  </div><!--column-->
-      					</div><!--row-->
-					</div>
-    
-    <div id="create" class="tab-pane fade">
-      <form id="createEnvelope"action="includes/envelope_inc.php" method="post" class="form-group col-md-6">
-					<h2>Create Envelope</h2><br>
-					<input type="text" placeholder="Envelope Name" name="name" class="form-control" required><br>
-					<input type="text" placeholder="Description" name="desc" class="form-control" required><br>
+      </div><!--column-->
+      
+      
+  </div><!--row-->
 					
-					<input type="number" placeholder="Warning amount ie: 5.00" name="warningAmount" class="form-control" required>
-					<p>If envelope total drops below warning value, envelope will turn red</p><br>
-					<input type="color" placeholder="" name="color" class="form-control" required>
-					<p>Select color for envelope. **</p><br>
-					<input type="submit" name="createEnvelope" class="btn btn-primary btn-block">
-				</form>	
+				</div>
+				<div id="menu2" class="tab-pane fade">
+					<form id="createEnvelope"action="includes/envelope_inc.php" method="post" class="form-group col-md-6">
+						<center><h2>Create Envelope</h2></center><br>
+						<input type="text" placeholder="Envelope Name" name="name" class="form-control" required><br>
+						<input type="text" placeholder="Description" name="desc" class="form-control" required><br>
+						
+						<input type="number" placeholder="Warning amount ie: 5.00" name="warningAmount" class="form-control" required>
+						<p>If envelope total drops below warning value, envelope will turn red</p><br>
+						<input type="color" placeholder="" name="color" class="form-control" required>
+						<p>Select color for envelope. **</p><br>
+						<input type="submit" name="createEnvelope" class="btn btn-primary btn-block">
+					</form>	
+				</div>
 			</div>
-			
-    <div id="transaction" class="tab-pane fade">
-      <form id="transaction"action="includes/envelope_inc.php" method="post" class="form-group col-md-6">
-			<center><h2>Transactions</h2></center><br>
-			<label for="name">Name of Envelope to Add Transaction</label>
-			<input type="text" placeholder="Envelope Name" name="name" class="form-control" required><br>
-			
-			<input type="submit" name="getTransactions" class="btn btn-primary btn-block">
-		</form>	
-    </div>
-    
-  </div>
-</div>
-<script>
-$(document).ready(function(){
-  $(".nav-tabs a").click(function(){
-    $(this).tab('show');
-  });
-});
-</script>
+			<div id="transaction" class="tab-pane fade">
+					<form id="transaction"action="includes/envelope_inc.php" method="post" class="form-group col-md-6">
+						<center><h2>Transactions</h2></center><br>
+						<label for="name">Name of Envelope to Add Transaction</label>
+						<input type="text" placeholder="Envelope Name" name="name" class="form-control" required><br>
+						
+						<input type="submit" name="getTransactions" class="btn btn-primary btn-block">
+					</form>	
+				</div>
+			</div>
+
+	</div>
 
 <?php include "templates/footer.php"; ?>
