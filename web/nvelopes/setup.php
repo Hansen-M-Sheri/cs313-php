@@ -7,8 +7,9 @@ if(!isset($_SESSION['userID'])){
 	exit();
 }
 else {
-	
+	$envelopeName = " ";
 	//query for envelopes and display them
+	// echo "test";
 	$sql = ' SELECT
 				 envelope.id,
 				 color,
@@ -27,7 +28,7 @@ else {
 	$stmt->bindValue(':userID', $_SESSION['userID']);
 	$stmt->execute();
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
-	echo "test 2";
+	// echo "test 2";
 	// echo count($rowsArray);
 	// foreach ($rowsArray as $row) {
 	// 	echo $row['envelopeid'];
@@ -72,7 +73,8 @@ else {
 					          <div class="card-body">
 					            <h4><?php echo $row['name']?></h4>
 					            <h4><?php echo $row['total']?></h4>
-						          </div><!--body-->
+					            <button type="button" class="btn-primary btn-xs" onclick=<?php $envelopeName = $row['name']><a href="transactions">+/-</a></button>
+					          </div><!--body-->
 					        </div><!--card-->
 				<?php	}
 				?>
