@@ -73,7 +73,7 @@ else {
 					          <div class="card-body">
 					            <h4><?php echo $row['name']?></h4>
 					            <h4><?php echo $row['total']?></h4>
-					            <button type="button" class="btn-primary btn-xs" onclick=<?php $envelopeName = $row['name']><a href="transactions">+/-</a></button>
+					            <!-- <button type="button" class="btn-primary btn-xs" onclick="<?php $envelopeName = $row['name'] ?>"><a href="transactions">+/-</a></button> -->
 					          </div><!--body-->
 					        </div><!--card-->
 				<?php	}
