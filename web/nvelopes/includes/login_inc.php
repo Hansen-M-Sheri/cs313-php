@@ -45,7 +45,8 @@ if(isset($_POST['submitLogin'])){
 				// 		exit();
 				// } elseif ($hashedPwdCheck == true) {
 					//Log in the user here
-					$_SESSION['userID'] = $row[0]['id'];
+					$_SESSION['userID'] = $rowsArray[0]['id'];
+					$_SESSION['test1'] = $rowsArray['id'];
 					//send to setup page
 					header("Location: ../setup.php");
 				// }
