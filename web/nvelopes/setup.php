@@ -17,12 +17,13 @@ else {
 			 WHERE
 			 userid=:userID
 			GROUP BY
-			 envelopeid;';
-	echo $sql;
+			 envelopeid';
+	// echo $sql;
 	$stmt = $db->prepare($sql);
 	$stmt->bindValue(':userID', $_SESSION['userID']);
 	$stmt->execute();
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
+	echo count($rowsArray);
 	foreach ($rowsArray as $row) {
 		echo $row['envelopeid'];
 		echo $row['total'];
