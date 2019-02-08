@@ -64,10 +64,10 @@ else {
 						<div class="row">
 					      <div class="col-md-3 ">
 					        <div class="card-container">
-					        	<h4><?php echo $row['name']?></h4>
-					        	<i class="far fa-envelope fa-8x icon"></i>
+					        	
+					        	<i class="far fa-envelope fa-8x icon" style="background: <?php echo$row['color']?>"></i>
 					          <div class="card-body">
-					            
+					            <h4><?php echo $row['name']?></h4>
 					            <h4><?php echo $row['total']?></h4>
 					          </div><!--body-->
 					        </div><!--card-->
