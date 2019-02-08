@@ -8,8 +8,8 @@ include 'dbh_inc.php';
 //if user has clicked submit button run this file
 if(isset($_POST['createEnvelope'])){
 	$envelopeName = htmlspecialchars($_POST['name']);
-	$description = htmlspecialchars($_POST['description']);
-	$warningAmt = htmlspecialchars($_POST['warningamount']);
+	$description = htmlspecialchars($_POST['desc']);
+	$warningAmt = htmlspecialchars($_POST['warningAmount']);
 	$color		= htmlspecialchars($_POST['color']);
 
 	if(empty($envelopeName) || empty($description) || empty($warningAmt) || empty($color)){
