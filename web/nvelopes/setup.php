@@ -17,15 +17,15 @@ else {
 				 INNER JOIN public.envelope
 				 ON transaction.envelopeid = envelope.id
 				 WHERE
-				 userid = 1
+				 userid = :userID
 				GROUP BY
 				 name;';
 	// echo $sql;
 	$stmt = $db->prepare($sql);
-	$stmt->bindValue(':userID', 1);
+	$stmt->bindValue(':userID', $_SESSION['userID']);
 	$stmt->execute();
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
-	// echo "test 2";
+	echo "test 2";
 	// echo count($rowsArray);
 	// foreach ($rowsArray as $row) {
 	// 	echo $row['envelopeid'];
