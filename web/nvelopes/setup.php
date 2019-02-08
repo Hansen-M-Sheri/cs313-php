@@ -99,7 +99,7 @@ else {
 						<input type="submit" name="createEnvelope" class="btn btn-primary btn-block">
 					</form>	
 				</div>
-			</div>
+			
 			<div id="transaction" class="tab-pane fade">
 					<form id="transaction"action="includes/envelope_inc.php" method="post" class="form-group col-md-6">
 						<center><h2>Transactions</h2></center><br>
