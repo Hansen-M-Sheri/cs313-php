@@ -27,7 +27,7 @@ if(isset($_POST['submitLogin'])){
 		}
 		else{
 			//verify email exists in db
-			$stmt = $db->prepare('SELECT email FROM public.user WHERE email=:email');
+			$stmt = $db->prepare('SELECT id, fName, lName, email, password FROM public.user WHERE email=:email');
 			$stmt->bindValue(':email', $email);
 			$stmt->execute();
 			$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC); //this returns array
@@ -46,7 +46,9 @@ if(isset($_POST['submitLogin'])){
 				// } elseif ($hashedPwdCheck == true) {
 					//Log in the user here
 					$_SESSION['userID'] = $rowsArray[0]['id'];
-					$_SESSION['test1'] = $rowsArray['id'];
+					$_SESSION['fName'] = $rowsArray['fName'];
+					$_SESSION['lName'] = $rowsArray[0]['lName'];
+					$_SESSION['email'] = $rowsArray[0]['email'];
 					//send to setup page
 					header("Location: ../setup.php");
 				// }
