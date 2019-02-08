@@ -13,13 +13,13 @@ if(isset($_POST['createEnvelope'])){
 	$color		= htmlspecialchars($_POST['color']);
 
 	if(empty($envelopeName) || empty($description) || empty($warningAmt) || empty($color)){
-		header("Location: ../login.php?envelope=empty");
+		header("Location: ../setup.php?envelope=empty");
 		exit();
 	}
 	else {
 		//check if name characters are valid
 		if(preg_match("/^[a-zA-Z]+$/", $envelopeName) === 0 ){
-			header("Location: ../login.php?envelope=invalidName");
+			header("Location: ../setup.php?envelope=invalidName");
 			exit();
 		}
 		else{
