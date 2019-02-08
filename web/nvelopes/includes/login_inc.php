@@ -30,25 +30,25 @@ if(isset($_POST['submitLogin'])){
 			$stmt = $db->prepare('SELECT email FROM public.user WHERE email=:email');
 			$stmt->bindValue(':email', $email);
 			$stmt->execute();
-			$row = $stmt->fetchALL(PDO::FETCH_ASSOC);
+			$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC); //this returns array
 
-			if($row  < 1){ //not found
+			if(count($rowsArray  < 1)){ //not found
 				header("Location: ../login.php?login=signup");
 				exit();
 			}
 			else {
 				//compare password
 				//dehash password
-				$hashedPwdCheck = password_verify($pwd, $row['password']);
-				if($hashedPwdCheck == false){
-					header("Location: ../login.php?login=error");
-						exit();
-				} elseif ($hashedPwdCheck == true) {
+				$hashedPwdCheck = password_verify($pwd, $rowsArray[0]['password']);
+				// if($hashedPwdCheck == false){
+				// 	header("Location: ../login.php?login=error");
+				// 		exit();
+				// } elseif ($hashedPwdCheck == true) {
 					//Log in the user here
-					$_SESSION['id'] = $row['id'];
+					$_SESSION['id'] = $row[0]['id'];
 					//send to setup page
 					header("Location: ../setup.php");
-				}
+				// }
 				
 
 			}
@@ -91,8 +91,8 @@ elseif (isset($_POST['submitSignup'])){
 				$stmt = $db->prepare('SELECT email FROM public.user WHERE email=:email');
 				$stmt->bindValue(':email', $email);
 				$stmt->execute();
-				$rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
-				if ($rows > 0 ){
+				$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
+				if (count($rowsArray) > 0 ){
 					header("Location: ../login.php?signup=userTaken");
 					exit();
 				} 
@@ -112,9 +112,9 @@ elseif (isset($_POST['submitSignup'])){
 					
 					$stmt->execute();
 
-					echo $db->lastInsertID('user_id_seq');
+					$id =  $db->lastInsertID('user_id_seq');
 					//store id in sessions 
-					$_SESSION['userID'] = $row['id'];
+					$_SESSION['userID'] = $id;
 					header("Location: ../setup.php");
 					exit();
 
