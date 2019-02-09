@@ -59,7 +59,7 @@ else {
 		<ul class="nav nav-tab">
 			<li><a data-toggle="tab" href="#menu1" class="btn btn-dark btn-tab">View Envelopes</a></li>
 			<li><a data-toggle="tab" href="#menu2" class="btn btn-dark btn-tab">Create Envelope</a></li>
-			<li><a data-toggle="tab" href="#transactions" class="btn btn-dark btn-tab">Transactions</a></li>
+			
 		</ul>
 		<div class="tab-content" style="">
 			<div id="menu1" class="tab-pane">
@@ -100,16 +100,7 @@ else {
 					</form>	
 				</div>
 			</div>
-			<div id="transaction" class="tab-pane fade">
-					<form id="transaction"action="includes/envelope_inc.php" method="post" class="form-group col-md-6">
-						<center><h2>Transactions</h2></center><br>
-						<label for="name">Name of Envelope to Add Transaction</label>
-						<input type="text" placeholder="Envelope Name" name="name" class="form-control" required><br>
-						
-						<input type="submit" name="getTransactions" class="btn btn-primary btn-block">
-					</form>	
-				</div>
-			</div>
+			
 
 	</div>
 
