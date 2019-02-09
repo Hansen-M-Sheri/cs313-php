@@ -51,9 +51,9 @@ else {
   <h2>Nvelopes</h2>
   <p>Simple Budgeting Web App</p>
   <ul class="nav nav-tabs">
-    <li class="active"><a href="#view">View Envelopes</a></li>
-    <li><a href="#create">Create Envelope</a></li>
-    <li><a href="#transactions">Transactions</a></li>
+    <li class="active"><a href="#view" data-toggle="tab">View Envelopes</a></li>
+    <li><a href="#create" data-toggle="tab">Create Envelope</a></li>
+    <li><a href="#transactions" data-toggle="tab">Transactions</a></li>
   </ul>
 
   <div class="tab-content">
