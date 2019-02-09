@@ -67,6 +67,7 @@ else {
 
 		<div class="tab-content">
 			<div class="tab-pane fade in active"  id="view">
+				<div 
 				<?php
 					foreach ($rowsArray as $row) { ?>
 						<div class="row">
@@ -80,6 +81,7 @@ else {
 					            <!-- <button type="button" class="btn-primary btn-xs" onclick="<?php $envelopeName = $row['name'] ?>"><a href="transactions">+/-</a></button> -->
 					          </div><!--body-->
 					        </div><!--card-->
+					    </div>
 				<?php	}
 				?>
 				</div>
