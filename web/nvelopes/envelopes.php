@@ -66,19 +66,16 @@ else {
 	  </ul>
 
   <div class="tab-content">
-    <div id="view" class="tab-pane fade in active">
-      <h3>HOME</h3>
-      <p>View all your budget envelopes here with their totals.</p>
-    </div>
-    <div id="create" class="tab-pane fade">
-      <h3>Create Envelope</h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div id="transactions" class="tab-pane fade">
-      <h3>Transactions</h3>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-    </div>
-  </div>
+				<div class="tab-pane fade in active"  id="view">
+					<p>First para Hi there 
+				</div>
+				<div class="tab-pane fade"  id="create">
+					<p>Second para Hi there 
+				</div>
+				<div class="tab-pane fade"  id="transactions">
+					<p>Third para Hi there 
+				</div>
+			</div>
 </div>
 
 <!-- <script>
