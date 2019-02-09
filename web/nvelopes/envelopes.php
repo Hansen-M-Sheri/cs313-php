@@ -68,20 +68,16 @@ else {
 		<div class="tab-content">
 			<div class="tab-pane fade in active"  id="view">
 				<div 
-				<?php
-					foreach ($rowsArray as $row) { 
-						?>
-						
-					        <!-- -->
+				<?php foreach ($rowsArray as $row): ?>>
+					<div class="card">
 					          <div class="card-body">
 					            <h4><?php echo $row['name']?></h4>
 					            <h4><?php echo $row['total']?></h4>
 					          
 					          </div><!--body-->
-					      
+					 </div>     
 					        
-				<?php	}
-				?>
+				<?php endforeach; ?>
 				</div>
 				<div class="tab-pane fade"  id="create">
 					<form id="createEnvelope"action="includes/envelope_inc.php" method="post" class="form-group col-md-6">
