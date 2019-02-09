@@ -67,7 +67,21 @@ else {
 
 		<div class="tab-content">
 			<div class="tab-pane fade in active"  id="view">
-				<p>First para Hi there </p>
+				<?php
+					foreach ($rowsArray as $row) { ?>
+						<div class="row">
+					      <div class="col-md-3 ">
+					        <div class="card-container">
+					        	
+					        	<i class="far fa-envelope fa-6x icon" style="background: <?php echo$row['color']?>"></i>
+					          <div class="card-body">
+					            <h4><?php echo $row['name']?></h4>
+					            <h4><?php echo $row['total']?></h4>
+					            <!-- <button type="button" class="btn-primary btn-xs" onclick="<?php $envelopeName = $row['name'] ?>"><a href="transactions">+/-</a></button> -->
+					          </div><!--body-->
+					        </div><!--card-->
+				<?php	}
+				?>
 				</div>
 				<div class="tab-pane fade"  id="create">
 					<form id="createEnvelope"action="includes/envelope_inc.php" method="post" class="form-group col-md-6">
@@ -83,7 +97,13 @@ else {
 					</form> 
 					</div>
 					<div class="tab-pane fade"  id="transactions">
-						<p>Third para Hi there 
+						<form id="transaction"action="includes/envelope_inc.php" method="post" class="form-group col-md-6">
+						<center><h2>Transactions</h2></center><br>
+						<label for="name">Name of Envelope to Add Transaction</label>
+						<input type="text" placeholder="Envelope Name" name="name" class="form-control" required><br>
+						
+						<input type="submit" name="getTransactions" class="btn btn-primary btn-block">
+					</form>	
 						</div>
 					</div>
 				</div>
