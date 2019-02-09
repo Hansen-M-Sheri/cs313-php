@@ -69,19 +69,17 @@ else {
 			<div class="tab-pane fade in active"  id="view">
 				<div 
 				<?php
-					foreach ($rowsArray as $row) { ?>
-						<div class="row">
-					      <div class="col-md-3 ">
-					        <div class="card-container">
-					        	
-					        	<i class="far fa-envelope fa-6x icon" style="background: <?php echo$row['color']?>"></i>
+					foreach ($rowsArray as $row) { 
+						?>
+						
+					        <!-- -->
 					          <div class="card-body">
 					            <h4><?php echo $row['name']?></h4>
 					            <h4><?php echo $row['total']?></h4>
-					            <!-- <button type="button" class="btn-primary btn-xs" onclick="<?php $envelopeName = $row['name'] ?>"><a href="transactions">+/-</a></button> -->
+					          
 					          </div><!--body-->
-					        </div><!--card-->
-					    </div>
+					      
+					        
 				<?php	}
 				?>
 				</div>
