@@ -67,7 +67,7 @@ else {
 
 		<div class="tab-content">
 			<div class="tab-pane fade in active"  id="view">
-				<div 
+				<div class="tab_container"
 				<?php foreach ($rowsArray as $row): ?>>
 					<div class="card">
 					          <div class="card-body">
