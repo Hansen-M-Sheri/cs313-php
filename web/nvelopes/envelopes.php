@@ -48,34 +48,18 @@ else {
 	</header>
 	<!-- MAIN SECTION-->
 	<div class="container">
-  <h2>Nvelopes</h2>
-  <p>Simple Budgeting Web App</p>
-  <ul class="nav nav-tabs">
-    <li class="active"><a href="#view" data-toggle="tab">View Envelopes</a></li>
-    <li><a href="#create" data-toggle="tab">Create Envelope</a></li>
-    <li><a href="#transactions" data-toggle="tab">Transactions</a></li>
-  </ul>
+	  <h2>Nvelopes</h2>
+	  <p>Simple Budgeting Web App</p>
+	  <ul class="nav nav-pills nav-justified">
+	    <li class="active"><a href="#view" data-toggle="tab">View Envelopes</a></li>
+	    <li><a href="#create" data-toggle="tab">Create Envelope</a></li>
+	    <li><a href="#transactions" data-toggle="tab">Transactions</a></li>
+	  </ul>
 
   <div class="tab-content">
     <div id="view" class="tab-pane fade in active">
       <h3>HOME</h3>
       <p>View all your budget envelopes here with their totals.</p>
-      <?php
-      //create dynamic display of query results of envelopes
-		foreach ($rowsArray as $row) { ?>
-			<div class="row">
-		      <div class="col-md-3 ">
-		        <div class="card-container">
-		        	
-		        	<i class="far fa-envelope fa-6x icon" style="background: <?php echo$row['color']?>"></i>
-		          <div class="card-body">
-		            <h4><?php echo $row['name']?></h4>
-		            <h4><?php echo $row['total']?></h4>
-		            <!-- <button type="button" class="btn-primary btn-xs" onclick="<?php $envelopeName = $row['name'] ?>"><a href="transactions">+/-</a></button> -->
-		          </div><!--body-->
-		        </div><!--card-->
-	<?php	}
-	?>
     </div>
     <div id="create" class="tab-pane fade">
       <h3>Create Envelope</h3>
