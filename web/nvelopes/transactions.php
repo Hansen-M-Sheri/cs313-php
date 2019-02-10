@@ -15,6 +15,8 @@ else {
 		$envelopeID = $_POST['envID'];
 		//query for envelopes and display them
 		// echo "test";
+		echo var_dump($_SESSION['userID']);
+		echo var_dump($envelopeID);
 		$sql = ' SELECT
 					 *
 					FROM
@@ -31,6 +33,7 @@ else {
 		$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
 		}
 	}
+	echo "line 34";
 ?>
 	
 	<title>LOGIN to Nvelopes</title>
