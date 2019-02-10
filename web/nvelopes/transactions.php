@@ -59,12 +59,13 @@ else {
 		</ul>
 		<div class="tab-content" style="">
 			<div id="menu1" class="tab-pane active">
+				<tr>
+						<th>Date</th>
+						<th>Details</th>
+						<th>Amount</th>
+					</tr>
 				<?php foreach($rowsArray as $row): ?>
-					<th>
-						<td>Date</td>
-						<td>Details</td>
-						<td>Amount</td>
-					</th>
+					
 					<tr>
 						<td><?php echo $row['date'] ?></td>
 						<td><?php echo $row['details'] ?></td>
