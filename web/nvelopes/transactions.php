@@ -24,7 +24,7 @@ else {
 					 WHERE 
 					  envelopeID=1
 					 AND
-					  userid=1';
+					  userid=1;';
 		 echo $sql;
 		$stmt = $db->prepare($sql);
 		$stmt->bindValue(':envelopeID', $envelopeID);
