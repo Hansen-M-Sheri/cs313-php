@@ -22,9 +22,9 @@ else {
 					FROM
 					 public.transaction
 					 WHERE 
-					  envelopeID=:envelopeID
+					  envelopeID=1
 					 AND
-					  userid=:userID';
+					  userid=1';
 		 echo $sql;
 		$stmt = $db->prepare($sql);
 		$stmt->bindValue(':envelopeID', $envelopeID);
