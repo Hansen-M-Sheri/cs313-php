@@ -25,7 +25,7 @@ else {
 					  envelopeID = :envelopeID
 					 AND
 					  userid = :userID';
-		// echo $sql;
+		 echo $sql;
 		$stmt = $db->prepare($sql);
 		$stmt->bindValue(':envelopeID', $envelopeID);
 		$stmt->bindValue(':userid', $_SESSION['userID']);
