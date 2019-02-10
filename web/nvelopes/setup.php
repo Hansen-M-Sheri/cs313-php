@@ -57,12 +57,12 @@ else {
 
 	<div class="row col-md-8">
 		<ul class="nav nav-tab">
-			<li><a data-toggle="tab" href="#menu1" class="btn btn-dark btn-tab">View Envelopes</a></li>
-			<li><a data-toggle="tab" href="#menu2" class="btn btn-dark btn-tab">Create Envelope</a></li>
+			<li><a data-toggle="tab" href="#view" class="btn btn-dark btn-tab">View Envelopes</a></li>
+			<li><a data-toggle="tab" href="#create" class="btn btn-dark btn-tab">Create Envelope</a></li>
 			
 		</ul>
 		<div class="tab-content" style="">
-			<div id="menu1" class="tab-pane">
+			<div id="view" class="tab-pane">
 				<?php
 					foreach ($rowsArray as $row) { ?>
 						<div class="row">
@@ -73,7 +73,10 @@ else {
 					          <div class="card-body">
 					            <h4><?php echo $row['name']?></h4>
 					            <h4><?php echo $row['total']?></h4>
-					            <!-- <button type="button" class="btn-primary btn-xs" onclick="<?php $envelopeName = $row['name'] ?>"><a href="transactions">+/-</a></button> -->
+					            <form action="transactions.php" method="POST">
+						            <input type="hidden" name="envID" value="<?php echo $row['envelopeid']?>">
+						            <button type="submit" name="add"class="btn btn-primary">Add transaction</button> 
+						        </form>
 					          </div><!--body-->
 					        </div><!--card-->
 				<?php	}
@@ -86,7 +89,7 @@ else {
   </div><!--row-->
 					
 				</div>
-				<div id="menu2" class="tab-pane fade">
+				<div id="create" class="tab-pane fade">
 					<form id="createEnvelope"action="includes/envelope_inc.php" method="post" class="form-group col-md-6">
 						<center><h2>Create Envelope</h2></center><br>
 						<input type="text" placeholder="Envelope Name" name="name" class="form-control" required><br>
@@ -99,7 +102,7 @@ else {
 						<input type="submit" name="createEnvelope" class="btn btn-primary btn-block">
 					</form>	
 				</div>
-			</div>
+			
 			
 
 	</div>
