@@ -7,7 +7,7 @@ if(!isset($_SESSION['userID'])){
 	exit();
 }
 else {
-	if(!isset$_POST['envID']){
+	if(!isset($_POST['envID'])){
 		header("Location: login.php?login=noEnvelopeID");
 		exit();
 	}
@@ -29,13 +29,6 @@ else {
 		$stmt->bindValue(':userid', $_SESSION['userID']);
 		$stmt->execute();
 		$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
-		// echo "test 2";
-		// echo count($rowsArray);
-		// foreach ($rowsArray as $row) {
-		// 	echo $row['envelopeid'];
-		// 	echo $row['total'];
-		// 	echo '<br>';
-		// }
 		}
 	}
 ?>
