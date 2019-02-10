@@ -74,7 +74,7 @@ else {
 					            <h4><?php echo $row['name']?></h4>
 					            <h4><?php echo $row['total']?></h4>
 					            <form action="transactions.php" method="POST">
-						            <input type="hidden" name="envID" value="<?php echo $row['envelopeid']?>">
+						            <input type="hidden" name="envID" value="<?php echo $row['id']?>">
 						            <button type="submit" name="add"class="btn btn-primary">Add transaction</button> 
 						        </form>
 					          </div><!--body-->
