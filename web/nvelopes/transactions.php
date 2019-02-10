@@ -15,17 +15,17 @@ else {
 		$envelopeID = $_POST['envID'];
 		//query for envelopes and display them
 		// echo "test";
-		echo var_dump($_SESSION['userID']);
-		echo var_dump($envelopeID);
+		// echo var_dump($_SESSION['userID']);
+		// echo var_dump($envelopeID);
 		$sql = ' SELECT
 					 *
 					FROM
 					 public.transaction
 					 WHERE 
-					  envelopeID=1
+					  envelopeID=:envelopeID
 					 AND
-					  userid=1;';
-		 echo $sql;
+					  userid=:userid;';
+		 // echo $sql;
 		$stmt = $db->prepare($sql);
 		$stmt->bindValue(':envelopeID', $envelopeID);
 		$stmt->bindValue(':userid', $_SESSION['userID']);
@@ -33,7 +33,7 @@ else {
 		$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
 		}
 	}
-	echo "line 34";
+	echo var_dump(count($rowsArray));
 ?>
 	
 	<title>LOGIN to Nvelopes</title>
