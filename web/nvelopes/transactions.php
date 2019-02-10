@@ -63,9 +63,9 @@ else {
 						<td>Amount</td>
 					</th>
 					<tr>
-						<td><?php $row['date'] ?></td>
-						<td><?php $row['details'] ?></td>
-						<td><?php $row['amount'] ?></td>
+						<td><?php echo $row['date'] ?></td>
+						<td><?php echo $row['details'] ?></td>
+						<td><?php echo $row['amount'] ?></td>
 					</tr>
 				<?php endforeach; ?>
       		</div><!--column-->
