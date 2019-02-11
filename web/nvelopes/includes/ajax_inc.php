@@ -1,12 +1,12 @@
 <?php
 include "dbh_inc.php";
 //if post is NOT set with an itemID - add item
-if(!isset($_POST['itemID'])) {
+if($_POST['type'] == 'add') {
 	$envelopeID = $_POST['envelopeID'];
 	$userID 	= $_POST['userID'];
-	$date 		= htmlspecialchars(string)$_POST['date'];
-	$details 	= htmlspecialchars(string)$_POST['details'];
-	$amount 	= htmlspecialchars(string)$_POST['amount'];
+	$date 		= htmlspecialchars($_POST['date']);
+	$details 	= htmlspecialchars($_POST['details']);
+	$amount 	= htmlspecialchars($_POST['amount']);
 	
 	//validate items - convert date to store epoch in db
 
@@ -14,7 +14,7 @@ if(!isset($_POST['itemID'])) {
 	$stmt = $db->prepare($sql);
 
 	//pass values to statement
-	$stmt->bindValue(':fName', $envelopeID);
+	$stmt->bindValue(':envelopeID', $envelopeID);
 	$stmt->bindValue(':userID', $userID);
 	$stmt->bindValue(':date', $date);
 	$stmt->bindValue(':details', $details);
