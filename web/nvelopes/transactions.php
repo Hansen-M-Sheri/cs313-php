@@ -73,7 +73,7 @@ else {
 						<input  type="text" name="details" id="details"> 
 						<label for="amount">Amount</label>
 						$<input  type="number" min="0.01" step="0.01" name="amount" id="amount"> 
-						<button type="button" name="addTransaction" class="btn btn-primary btn-block" onclick="addTransaction(<?php echo $envelopeID; ?>, <?php echo $_SESSION['userID']; ?>, $('#date').html(), $('#details').html(), $('#amount').html())"> Add Transaction </button>
+						<button type="button" name="addTransaction" class="btn btn-primary btn-block" onclick="addTransaction(<?php echo $envelopeID; ?>, <?php echo $_SESSION['userID']; ?>, $('#date').html(), $('#details').html(), $('#amount').html(),'add')"> Add Transaction </button>
 					
 				</div>
 				<tr>
@@ -98,9 +98,9 @@ else {
 	</div>
 
 	<script>
-		function addTransaction(envelopeID, userID, date, details, amount) {
-	$.post('./ajax.php',
-		{"envelopeID": envelopeID, "userID": userID, "date": date, "details":details, "amount": amount},
+		function addTransaction(envelopeID, userID, date, details, amount, type) {
+	$.post('inlcudes/ajax.php',
+		{"envelopeID": envelopeID, "userID": userID, "date": date, "details":details, "amount": amount, "type": 'add'},
 			function (returnedData) {
 				console.log(returnedData);
 
