@@ -1,5 +1,5 @@
 <?php
-include "dbh_inc.php"
+include "dbh_inc.php";
 //if post is NOT set with an itemID - add item
 if(!isset($_POST['itemID'])) {
 	$envelopeID = $_POST['envelopeID'];
@@ -30,4 +30,4 @@ if(!isset($_POST['itemID'])) {
 //if update 
 
 //if delete
-}
+
