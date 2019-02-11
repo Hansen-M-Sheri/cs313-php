@@ -99,7 +99,7 @@ else {
 
 	<script>
 		function addTransaction(envelopeID, userID, date, details, amount, type) {
-	$.post('inlcudes/ajax.php',
+	$.post('inlcudes/ajax_inc.php',
 		{"envelopeID": envelopeID, "userID": userID, "date": date, "details":details, "amount": amount, "type": 'add'},
 			function (returnedData) {
 				console.log(returnedData);
