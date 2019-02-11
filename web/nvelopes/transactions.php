@@ -39,7 +39,7 @@ else {
 	
 	<title>LOGIN to Nvelopes</title>
 	<link rel="stylesheet" type="text/css" href="css/login.css">
-	<script type="text/javascript" src="script.js"></script>
+	
 </head>
 <body>
 	<header>
@@ -96,5 +96,16 @@ else {
 			
 
 	</div>
+
+	<script>
+		function addTransaction(envelopeID, userID, date, details, amount) {
+	$.post('./ajax.php',
+		{"envelopeID": envelopeID, "userID": userID, "date": date, "details":details, "amount": amount},
+			function (returnedData) {
+				console.log(returnedData);
+
+		}, 'json');
+	}
+	</script>
 
 <?php include "templates/footer.php"; ?>
