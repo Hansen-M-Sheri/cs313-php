@@ -1,6 +1,6 @@
 <?php
 // include 'dbh_inc.php';
- return echo var_dump($_POST);
+ echo var_dump($_POST);
 //if post is NOT set with an itemID - add item
 // if($_POST['type'] == 'add') {
 // 	$envelopeID = $_POST['envelopeID'];
