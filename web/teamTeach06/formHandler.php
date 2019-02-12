@@ -18,7 +18,7 @@ else {
 		    :verse,
 		    :content
 		);
-')
+');
 	$stmt->bindValue(':book', $book);
 	$stmt->bindValue(':chapter', $chapter);
 	$stmt->bindValue(':verse', $verse);
