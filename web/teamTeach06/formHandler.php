@@ -1,9 +1,6 @@
 <?php
-if(!isset($_POST['Submit'])){
-	header("Location: team06.php");
-	exit();
-}
-else {
+
+	echo var_dump($_POST);
 	$book = $_POST['book'];
 	$chapter = $_POST['chapter'];
 	$verse = $_POST['verse'];
@@ -35,7 +32,7 @@ else {
                 VALUES($itemID,$topic);");
 	
 	}
-}
+
 
 ?>
 <!DOCTYPE HTML>
