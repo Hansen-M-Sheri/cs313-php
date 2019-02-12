@@ -27,14 +27,8 @@ else {
 	$itemID = $db->lastInsertID('Scripture_id_seq');
 	//insert into 
 	foreach($topics as $topic){
-		'SELECT ID FROM Topic WHERE name=$topic';
-		$stmt = $db->prepare('INSERT INTO ScripturesXTopic(book,chapter,verse,content)
-			VALUES(
-			    :book,
-			    :chapter,
-			    :verse,
-			    :content
-			);
-	')
+		 $db->query("INSERT INTO Scriptures_to_Topic(Scriptures_id,Topic_id)
+                VALUES($itemID,$topic);");
+	
 	}
 }
