@@ -1,4 +1,6 @@
 <?php
+ error_reporting(E_ALL);
+  ini_set('display_errors', 1);
 //include db connect file
 include 'dbh.php';
 	//get list of topics store in array
@@ -20,10 +22,7 @@ include 'dbh.php';
 		<input type="text" name="chapter" placeholder="Chapter">
 		<input type="text" name="verse" placeholder="Verse">
 		<input type="textarea" name="content" placeholder="Content">
-		<!-- <?php 
-			foreach($returnArray as $row){ ?>
-				<input type="checkbox" name="topic[]" value='<?php echo $row['name']?>'<br>
-			<?php} ?> -->
+		
 		<input type="submit" value="Submit">
 	</form>
 
