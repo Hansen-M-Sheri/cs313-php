@@ -36,3 +36,55 @@ else {
 	
 	}
 }
+
+?>
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <title>Team 06</title>
+        <style type="text/css">
+            body{
+                font-size: 1em;
+            }
+            ul{
+                list-style-type: none;
+            }
+            .scripture{
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Scriptures</h1>
+
+        <?php
+
+        foreach($db->query("SELECT * FROM Topic;") as $row)
+        {
+            echo "<div>";
+            echo "<h2>".$row[name]."</h2>";
+
+            foreach($db->query("SELECT Scriptures_to_Topic.Scriptures_id,
+                                Scriptures.book,Scriptures.chapter,
+                                Scriptures.verse,Scriptures.content
+                                FROM Scriptures_to_Topic
+                                JOIN Scriptures
+                                ON Scriptures_to_Topic.Scriptures_id = Scriptures.ID
+                                WHERE Scriptures_to_Topic.Topic_id = $row[id];") as $scriptur)
+            {
+                echo "<p>";
+                //scripture
+                echo "<span class='scripture'>";
+                echo $scriptur[book]." ".$scriptur[chapter].":".$scriptur[verse]." - ";
+                echo "</span>";
+                echo "&quot;".$scriptur[content]."&quot;";
+                echo "</p>";
+
+            }
+        }
+
+        ?>
+
+    </body>
+</html>
