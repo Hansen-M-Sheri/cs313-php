@@ -2,10 +2,10 @@
 //include db connect file
 include 'dbh.php';
 	//get list of topics store in array
-	$sql = "SELECT name FROM Topic";
-	$stmt = $db->prepare($sql);
-	$stmt->execute();
-	$returnArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
+	// $sql = "SELECT name FROM Topic";
+	// $stmt = $db->prepare($sql);
+	// $stmt->execute();
+	// $returnArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -20,10 +20,10 @@ include 'dbh.php';
 		<input type="text" name="chapter" placeholder="Chapter">
 		<input type="text" name="verse" placeholder="Verse">
 		<input type="textarea" name="content" placeholder="Content">
-		<?php 
+		<!-- <?php 
 			foreach($returnArray as $row){ ?>
 				<input type="checkbox" name="topic[]" value='<?php echo $row['name']?>'<br>
-			<?php} ?>
+			<?php} ?> -->
 		<input type="submit" value="Submit">
 	</form>
 
