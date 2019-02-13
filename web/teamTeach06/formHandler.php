@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL);
   ini_set('display_errors', 1);
-  
+
 include('dbh.php');
 	echo var_dump($_POST);
 	$book = $_POST['book'];
@@ -26,7 +26,7 @@ try
 	$stmt->bindValue(':verse', $verse);
 	$stmt->bindValue(':content', $content);
 	$stmt->execute();
-	$itemID = $db->lastInsertID('Scripture_id_seq');
+	$itemID = $db->lastInsertID('Scriptures_id_seq');
 	
 	echo $itemID;
 	if(!$itemID > 1 ){
