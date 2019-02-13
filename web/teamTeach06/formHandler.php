@@ -25,7 +25,7 @@ try
 	$stmt->execute();
 	$itemID = $db->lastInsertID('Scripture_id_seq');
 	echo <br>;
-	echo $itemID:
+	echo $itemID;
 	if(!$itemID > 1 ){
 		header("Location: team06.php?id=$itemID");
 		exit();
