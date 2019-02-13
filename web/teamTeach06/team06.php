@@ -24,13 +24,15 @@ include 'dbh.php';
 		<input type="textarea" name="content" placeholder="Content">
 		<?php
 
-              foreach($db->query('SELECT * FROM Topic;') as $row)
+              foreach($db->query('SELECT id, name FROM Topic;') as $row)
                 {
+                	$id = $row['id'];
+                	$name = $row['name'];
 
                     echo "<li>";
                     //scripture
-                    echo "<input type='checkbox' name='topic[]' value='".$row[id]."'/>";
-                    echo $row[name];
+                    echo "<input type='checkbox' name='topic[]' id='chkTopics$id' value='$id' />";
+                    echo $name;
                     echo "</li>";
 
                 }
