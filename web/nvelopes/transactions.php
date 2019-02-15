@@ -74,8 +74,10 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 						<input type="hidden" name="userID" value="<?php echo $_SESSION['userID']; ?>">
 						<label for="date">Date</label>
 						<input  type="date" name="date" id="date"> 
+						<br>
 						<label for="details">Transaction Details</label>
 						<input  type="text" name="details" id="details"> 
+						<br>
 						<label for="amount">Amount</label>
 						$<input  type="number" min="0.01" step="0.01" name="amount" id="amount"> 
 						<input type="submit" name="submitLogin" class="btn btn-primary btn-block">
