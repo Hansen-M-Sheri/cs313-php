@@ -1,7 +1,7 @@
 <?php 
 include 'dbh_inc.php';
 
-if post is NOT set with an itemID - add item
+//if post is NOT set with an itemID - add item
 if(isset($_POST['envelopeid'])) {
 	$envelopeID = $_POST['envelopeID'];
 	$userID 	= $_POST['userID'];
