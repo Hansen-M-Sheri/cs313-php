@@ -26,9 +26,9 @@ if(isset($_POST['envelopeID'])) {
 
 	// $id =  $db->lastInsertID('transaction_id_seq');
 	$newPage = "../transactions.php?envID=$envelopeID";
-	echo $newPage;
-	// header("Location: $newPage");
-	// die();
+	// echo $newPage;
+	header("Location: $newPage");
+	die();
 }
 else {
 	header("Location: ../transactions.php?envID=ErrorNoID");

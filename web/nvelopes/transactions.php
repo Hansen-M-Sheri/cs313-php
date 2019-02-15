@@ -9,13 +9,7 @@ if(!isset($_SESSION['userID'])){
 	exit();
 }
 else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
-	echo 'Post: ';
-	echo $_POST['envID'];
-	echo 'GET: ';
-	echo $_GET['envID'];
-	die();
-
-	if(!isset($_POST['envID']) || !isset($_GET['envID'])){
+	if(!isset($_POST['envID']) && !isset($_GET['envID'])){
 		header("Location: login.php?login=noEnvelopeID");
 		exit();
 	}
