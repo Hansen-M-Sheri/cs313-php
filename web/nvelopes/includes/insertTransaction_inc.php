@@ -2,7 +2,7 @@
 include 'dbh_inc.php';
 
 //if post is NOT set with an itemID - add item
-if(isset($_POST['envelopeid'])) {
+if(isset($_POST['envelopeID'])) {
 	$envelopeID = $_POST['envelopeID'];
 	$userID 	= $_POST['userID'];
 	$date 		= htmlspecialchars($_POST['date']);
