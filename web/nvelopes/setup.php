@@ -8,6 +8,8 @@ if(!isset($_SESSION['userID'])){
 }
 else {
 	$envelopeName = " ";
+	echo "GET: ";
+	echo $_GET;
 	//query for envelopes and display them
 	// echo "test";
 	$sql = ' SELECT
