@@ -95,16 +95,18 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 						</tr>
 					</thead>
 					
-					<?php foreach($rowsArray as $row): ?>
+					
 					<tbody>
+						<?php foreach($rowsArray as $row): ?>
 						<tr>
 							<td><?php echo $row['date'] ?></td>
 							<td><?php echo $row['details'] ?></td>
 							<td><?php echo $row['amount'] ?></td>
 						</tr>
+						<?php endforeach; ?>
 					<tbody>
 				</table>
-				<?php endforeach; ?>
+				
       		</div><!--column-->
   	</div><!--row-->
 					
