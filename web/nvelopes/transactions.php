@@ -94,9 +94,9 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 							<th>Amount</th>
 						</tr>
 					</thead>
+					
+					<?php foreach($rowsArray as $row): ?>
 					<tbody>
-						<?php foreach($rowsArray as $row): ?>
-						
 						<tr>
 							<td><?php echo $row['date'] ?></td>
 							<td><?php echo $row['details'] ?></td>
