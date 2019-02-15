@@ -68,7 +68,7 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 			<div id="menu1" class="tab-pane active">
 				<!-- ADD A TRANSACTION -->
 				<h3>Add a Transaction</h3>
-				<form class="form-group col-md-6" action="includes/insertTransaction_inc.php" method="POST">
+				<form class="form-inline" action="includes/insertTransaction_inc.php" method="POST">
 					
 						<input type="hidden" name="envelopeID" value="<?php echo $envelopeID; ?>">
 						<input type="hidden" name="userID" value="<?php echo $_SESSION['userID']; ?>">
@@ -84,18 +84,26 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 						<!-- <button type="button" name="addTransaction" class="btn btn-primary btn-block" onclick="addTransaction(<?php echo $envelopeID; ?>, <?php echo $_SESSION['userID']; ?>, $('#date').html(), $('#details').html(), $('#amount').html(),'add')"> Add Transaction </button> -->
 					
 				</form>
-				<tr>
-						<th>Date</th>
-						<th>Details</th>
-						<th>Amount</th>
-					</tr>
-				<?php foreach($rowsArray as $row): ?>
-					
-					<tr>
-						<td><?php echo $row['date'] ?></td>
-						<td><?php echo $row['details'] ?></td>
-						<td><?php echo $row['amount'] ?></td>
-					</tr>
+				<hr>
+				<h3>Transaction List</h3>
+				<table class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>Details</th>
+							<th>Amount</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach($rowsArray as $row): ?>
+						
+						<tr>
+							<td><?php echo $row['date'] ?></td>
+							<td><?php echo $row['details'] ?></td>
+							<td><?php echo $row['amount'] ?></td>
+						</tr>
+					<tbody>
+				</table>
 				<?php endforeach; ?>
       		</div><!--column-->
   	</div><!--row-->
