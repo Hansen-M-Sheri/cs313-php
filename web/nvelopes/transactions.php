@@ -9,14 +9,14 @@ if(!isset($_SESSION['userID'])){
 	exit();
 }
 else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
-	if(!isset($_POST['envID'] || !isset($_GET['envID']))){
+	if(!isset($_POST['envID']) || !isset($_GET['envID'])){
 		header("Location: login.php?login=noEnvelopeID");
 		exit();
 	}
 	else {
 		$envelopeID = "";
 		
-		if(isset($_POST['envID'] ){
+		if(isset($_POST['envID'])){
 			$envelopeID = $_POST['envID'];
 		}
 		else{
