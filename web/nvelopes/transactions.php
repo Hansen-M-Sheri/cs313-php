@@ -53,6 +53,7 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 			<div class="navBar">
 				<ul>
 					<li><a href="login.php">Home</a></li>
+					<li><a href="setup.php">Envelopes</a></li>
 				</ul>
 				<form action="includes/logout.php" method="post">
 					<button type="submit" name="logout">Logout</button>
