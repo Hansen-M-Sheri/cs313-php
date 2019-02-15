@@ -68,7 +68,7 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 			<div id="menu1" class="tab-pane active">
 				<!-- ADD A TRANSACTION -->
 				<h3>Add a Transaction</h3>
-				<form class="form-group" action="includes/insertTransaction_inc.php" method="POST">
+				<form class="form-group col-md-6" action="includes/insertTransaction_inc.php" method="POST">
 					
 						<input type="hidden" name="envelopeID" value="<?php echo $envelopeID; ?>">
 						<input type="hidden" name="userID" value="<?php echo $_SESSION['userID']; ?>">
@@ -79,7 +79,7 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 						<input  type="text" name="details" id="details"> 
 						<br>
 						<label for="amount">Amount</label>
-						$<input  type="number" min="0.01" step="0.01" name="amount" id="amount"> 
+						$<input  type="number" min="0.01" step="0.01" name="amount" id="amount"> <br>
 						<input type="submit" name="submitLogin" class="btn btn-primary btn-block">
 						<!-- <button type="button" name="addTransaction" class="btn btn-primary btn-block" onclick="addTransaction(<?php echo $envelopeID; ?>, <?php echo $_SESSION['userID']; ?>, $('#date').html(), $('#details').html(), $('#amount').html(),'add')"> Add Transaction </button> -->
 					
