@@ -9,16 +9,20 @@ if(!isset($_SESSION['userID'])){
 	exit();
 }
 else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
-	if(!isset($_POST['envID'])){
+	if(!isset($_POST['envID'] || !isset($_GET['envID']))){
 		header("Location: login.php?login=noEnvelopeID");
 		exit();
 	}
 	else {
-		$envelopeID = $_POST['envID'];
-		//query for envelopes and display them
-		// echo "test";
-		// echo var_dump($_SESSION['userID']);
-		// echo var_dump($envelopeID);
+		$envelopeID = "";
+		
+		if(isset($_POST['envID'] ){
+			$envelopeID = $_POST['envID'];
+		}
+		else{
+			$envelopeID = $_GET['envID'];
+		}
+		
 		$sql = ' SELECT
 					 *
 					FROM
