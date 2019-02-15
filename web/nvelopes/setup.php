@@ -30,13 +30,12 @@ else {
 	$stmt->bindValue(':userID', $_SESSION['userID']);
 	$stmt->execute();
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
-	// echo "test 2";
-	// echo count($rowsArray);
-	// foreach ($rowsArray as $row) {
-	// 	echo $row['envelopeid'];
-	// 	echo $row['total'];
-	// 	echo '<br>';
-	// }
+	
+	foreach ($rowsArray as $row) {
+		echo $row['name'];
+		echo $row['total'];
+		echo '<br>';
+	}
 }
 ?>
 	
