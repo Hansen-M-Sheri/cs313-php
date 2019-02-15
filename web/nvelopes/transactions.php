@@ -3,11 +3,12 @@ session_start();
 include 'includes/dbh_inc.php';
 include "templates/header.php";
 
+//*********CHECK PERMISSIONS*****************
 if(!isset($_SESSION['userID'])){
 	header("Location: login.php?login=noAuth");
 	exit();
 }
-else {
+else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 	if(!isset($_POST['envID'])){
 		header("Location: login.php?login=noEnvelopeID");
 		exit();
@@ -63,7 +64,7 @@ else {
 			<div id="menu1" class="tab-pane active">
 				<!-- ADD A TRANSACTION -->
 				<h3>Add a Transaction</h3>
-				<div class="form-group">
+				<form class="form-group" action="includes/insertTransaction_inc.php" method="POST">
 					
 						<input type="hidden" name="envelopeID" value="<?php echo $envelopeID; ?>">
 						<input type="hidden" name="userID" value="<?php echo $_SESSION['userID']; ?>">
@@ -73,9 +74,10 @@ else {
 						<input  type="text" name="details" id="details"> 
 						<label for="amount">Amount</label>
 						$<input  type="number" min="0.01" step="0.01" name="amount" id="amount"> 
-						<button type="button" name="addTransaction" class="btn btn-primary btn-block" onclick="addTransaction(<?php echo $envelopeID; ?>, <?php echo $_SESSION['userID']; ?>, $('#date').html(), $('#details').html(), $('#amount').html(),'add')"> Add Transaction </button>
+						<input type="submit" name="submitLogin" class="btn btn-primary btn-block">
+						<!-- <button type="button" name="addTransaction" class="btn btn-primary btn-block" onclick="addTransaction(<?php echo $envelopeID; ?>, <?php echo $_SESSION['userID']; ?>, $('#date').html(), $('#details').html(), $('#amount').html(),'add')"> Add Transaction </button> -->
 					
-				</div>
+				</form>
 				<tr>
 						<th>Date</th>
 						<th>Details</th>
