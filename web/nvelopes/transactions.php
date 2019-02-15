@@ -30,7 +30,8 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 					 WHERE 
 					  envelopeID=:envelopeID
 					 AND
-					  userid=:userid;';
+					  userid=:userid
+					 ORDER BY date DESC;';
 		 // echo $sql;
 		$stmt = $db->prepare($sql);
 		$stmt->bindValue(':envelopeID', $envelopeID);
