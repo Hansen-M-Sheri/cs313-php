@@ -30,6 +30,7 @@ if(isset($_POST['username'])){
 			$_SESSION['userID'] = $rowsArray[0]['id'];
 	}
 }
+}
 
 
 
