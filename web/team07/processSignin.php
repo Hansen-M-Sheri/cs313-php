@@ -6,6 +6,7 @@ if(isset($_POST['username'])){
 	$user = htmlspecialchars($_POST['username']);
 	$pwd  = htmlspecialchars($_POST['password']);
 
+	echo $user;
 	//Get password from username in db
 	$sql = 'SELECT password FROM team.user WHERE username=:username;';
 	$stmt = $db->prepare($sql);
@@ -19,10 +20,10 @@ if(isset($_POST['username'])){
 	}
 	else {
 		//compare user entered pwd against hashed pwd
-		echo $sql;
-		echo var_dump($rowsArray);
-		$pwd = $rowsArray[0];
-		echo $pwd;
+		// echo $sql;
+		// echo var_dump($rowsArray);
+		$pwd = $rowsArray[0]['password'];
+		// echo $pwd;
 	}
 }
 
