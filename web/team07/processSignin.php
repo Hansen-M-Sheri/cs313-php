@@ -19,6 +19,7 @@ if(isset($_POST['username'])){
 	}
 	else {
 		//compare user entered pwd against hashed pwd
+		echo $sql;
 		echo var_dump($rowsArray);
 		$pwd = $rowsArray[0];
 		echo $pwd;
