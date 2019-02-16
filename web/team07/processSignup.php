@@ -23,17 +23,17 @@ if(isset($_POST['username'])){
 		$stmt->bindValue(':username', $user);
 		$stmt->bindValue(':pwd', $hashedPwd);
 		$stmt->execute();
-		$userID = $db->lastInsertID('user_id_seq');
-		if($userID < 1) { //failed insert
-			$newURL = 'signup.php?error=dbInputUser';
-			header("Location: $newURL");
-			die();
-		}
-		else {
+		// $userID = $db->lastInsertID('user_id_seq');
+		// if($userID < 1) { //failed insert
+		// 	$newURL = 'signup.php?error=dbInputUser';
+		// 	header("Location: $newURL");
+		// 	die();
+		// }
+		// else {
 			$newURL = 'signin.php';
 			header("Location: $newURL");
 			die();
-		}
+		// }
 	}
 }
 else {
