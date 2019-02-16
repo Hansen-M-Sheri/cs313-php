@@ -1,6 +1,6 @@
 <?php
 session_start();
-// echo $_SESSION['username'];
+echo $_SESSION['username'];
 $username = "";
 // get user data from sessions if set
 if(isset($_SESSION['username'])){
@@ -21,6 +21,6 @@ else {
 	<title>WELCOME</title>
 </head>
 <body>
-	<h3 Welcome <?php echo $username; ?></h3>
+	<h3> Welcome <?php echo $username; ?></h3>
 </body>
 </html>
