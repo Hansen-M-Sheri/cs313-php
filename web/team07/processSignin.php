@@ -6,11 +6,11 @@ if(isset($_POST['username'])){
 	$user = htmlspecialchars($_POST['username']);
 	$pwd  = htmlspecialchars($_POST['password']);
 
-	echo $user;
+	// echo $user;
 	//Get password from username in db
 	$sql = 'SELECT password FROM team.user WHERE username=:username;';
 	$stmt = $db->prepare($sql);
-	$stmt->bindValue(':username', 'sheri');
+	$stmt->bindValue(':username', $user);
 	$stmt->execute();
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
 	if($rowsArray < 1){ 
@@ -20,10 +20,14 @@ if(isset($_POST['username'])){
 	}
 	else {
 		//compare user entered pwd against hashed pwd
-		// echo $sql;
-		// echo var_dump($rowsArray);
-		$pwd = $rowsArray[0]['password'];
-		// echo $pwd;
+		$hashedPwdCheck = password_verify($pwd, $rowsArray[0]['password']);
+		if($hashedPwdCheck == false){
+			$newURL = 'signin.php?error=passwordMatch';
+			header("Location: $newURL");
+				exit();
+		} elseif ($hashedPwdCheck == true) {
+			//Log in the user here
+			$_SESSION['userID'] = $rowsArray[0]['id'];
 	}
 }
 
