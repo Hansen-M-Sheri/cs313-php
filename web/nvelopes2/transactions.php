@@ -40,28 +40,27 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 		$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
 		}
 	}
-	echo var_dump(count($rowsArray));
+	// echo var_dump(count($rowsArray));
 ?>
+<!-- Login form - process with login_inc.php-->
 	
-	<title>LOGIN to Nvelopes</title>
+	<title>Transactions to Nvelopes</title>
 	<link rel="stylesheet" type="text/css" href="css/login.css">
-	
 </head>
 <body>
 	<header>
 		<nav>
 			<div class="navBar">
 				<ul>
-					<li><a href="login.php">Home</a></li>
+					<li><a href="signup.php">Home</a></li>
 					<li><a href="setup.php">Envelopes</a></li>
+					<li><a href="createEnvelope.php">Create Envelopes</a></li>
+					<li><a href="includes/logout.php">Logout</a></li>
+					
 				</ul>
-				<form action="includes/logout.php" method="post">
-					<button type="submit" name="logout">Logout</button>
-				</form>
 			</div>
 		</nav>
 	</header>
-
 	<div class="row col-md-8">
 		<ul class="nav nav-tab">
 			<li><a data-toggle="tab" href="#menu1" class="btn btn-dark btn-tab">Transactions</a></li>
