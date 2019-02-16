@@ -44,6 +44,7 @@ if(isset($_POST['createEnvelope'])){
 				$stmt->bindValue(':envelopeID', $newItemID);
 				$stmt->bindValue(':userID', $_SESSION['userID']);
 				$stmt->bindValue(':date', date("d/m/Y"));
+				$stmt->bindValue(':details', "initialize envelope");
 				$stmt->bindValue(':amount', '0.00');
 				$stmt->execute();
 
