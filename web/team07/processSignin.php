@@ -21,7 +21,7 @@ if(isset($_POST['username'])){
 	else {
 		//compare user entered pwd against hashed pwd
 		$hashedPwdCheck = password_verify($pwd, $rowsArray[0]['password']);
-		echo "hashed pwd check";
+		// echo "hashed pwd check";
 		// if($hashedPwdCheck == false){
 		// 	$newURL = 'signin.php?error=passwordMatch';
 		// 	header("Location: $newURL");

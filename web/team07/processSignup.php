@@ -3,7 +3,7 @@ include 'dbh.php';
 //Get post values for username & password
 if(isset($_POST['username'])){
 	$user = htmlspecialchars($_POST['username']);
-	$pwd  = htmlspecialchars($_POST['password']);
+	$pwd  = $_POST['password'];
 	$pwdVerify = htmlspecialchars($_POST['passwordVerify']);
 
 	//stretch 1 - do password fields match, if not return error
