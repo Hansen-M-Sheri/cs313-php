@@ -28,8 +28,11 @@ if(isset($_POST['username'])){
 		// } elseif ($hashedPwdCheck == true) {
 			//Log in the user here
 			$_SESSION['userID'] = $rowsArray[0]['id'];
+			$newURL = 'welcome.php';
+			header("Location: $newURL");
+			die();
 	// }
-}
+	}
 }
 
 
