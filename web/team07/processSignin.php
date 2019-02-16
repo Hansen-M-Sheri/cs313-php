@@ -4,7 +4,7 @@ include 'dbh.php';
 //get the POST from signin
 if(isset($_POST['username'])){
 	$user = htmlspecialchars($_POST['username']);
-	$pwd  = htmlspecialchars($_POST['password']);
+	$pwd  = $_POST['password'];
 
 	// echo $user;
 	//Get password from username in db
