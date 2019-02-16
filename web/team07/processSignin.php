@@ -28,7 +28,7 @@ if(isset($_POST['username'])){
 		// 		exit();
 		// } elseif ($hashedPwdCheck == true) {
 			//Log in the user here
-			$_SESSION['userID'] = $rowsArray[0]['id'];
+			$_SESSION['username'] = $user;
 			$newURL = 'welcome.php';
 			header("Location: $newURL");
 			die();

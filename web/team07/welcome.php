@@ -2,8 +2,8 @@
 session_start();
 
 //get user data from sessions if set
-if(isset($_POST['username'])){
-	$username = $_POST['username'];
+if(isset($_SESSION['username'])){
+	$username = $_SESSION['username'];
 }
 else {
 	// if not redirect to signin page
