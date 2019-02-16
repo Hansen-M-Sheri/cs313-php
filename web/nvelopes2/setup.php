@@ -31,11 +31,11 @@ else {
 	$stmt->execute();
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
 	
-	foreach ($rowsArray as $row) {
-		echo $row['name'];
-		echo $row['total'];
-		echo '<br>';
-	}
+// 	foreach ($rowsArray as $row) {
+// 		echo $row['name'];
+// 		echo $row['total'];
+// 		echo '<br>';
+// 	}
 }
 ?>
 	
