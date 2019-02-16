@@ -43,7 +43,7 @@ if(isset($_POST['createEnvelope'])){
 				//pass values to statement
 				$stmt->bindValue(':envelopeID', $newItemID);
 				$stmt->bindValue(':userID', $_SESSION['userID']);
-				$stmt->bindValue(':date', date("d/m/Y"));
+				$stmt->bindValue(':date', date("m/d/Y"));
 				$stmt->bindValue(':details', "initialize envelope");
 				$stmt->bindValue(':amount', '0.00');
 				$stmt->execute();
