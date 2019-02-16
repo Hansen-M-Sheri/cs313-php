@@ -9,7 +9,7 @@ if(isset($_POST['username'])){
 	//Get password from username in db
 	$sql = 'SELECT password FROM team.user WHERE username=:username;';
 	$stmt = $db->prepare($sql);
-	$stmt->bindValue(':username', $user);
+	$stmt->bindValue(':username', 'sheri');
 	$stmt->execute();
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
 	if($rowsArray < 1){ 
