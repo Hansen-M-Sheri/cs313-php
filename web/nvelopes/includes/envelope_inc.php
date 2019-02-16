@@ -35,6 +35,21 @@ if(isset($_POST['createEnvelope'])){
 			if($newItemID < 1){
 				header("Location: ../setup.php?create=error");
 			} else {
+				
+				//initial insert to make values = 0
+				$sql = 'INSERT INTO public.transaction (envelopeid, userid, date, details, amount) VALUES (:envelopeID, :userID, :date, :details, :amount)';
+				$stmt = $db->prepare($sql);
+
+				//pass values to statement
+				$stmt->bindValue(':envelopeID', $newItemID);
+				$stmt->bindValue(':userID', $_SESSION['userID']);
+				$stmt->bindValue(':date', date("d/m/Y"));
+				$stmt->bindValue(':amount', '0.00');
+				$stmt->execute();
+
+				
+				
+				$stmt->execute();
 				header("Location: ../setup.php?create=success");
 			}
 		}
