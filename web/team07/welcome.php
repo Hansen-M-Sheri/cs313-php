@@ -20,6 +20,6 @@ else {
 	<title>WELCOME</title>
 </head>
 <body>
-	<h3 Welcome <?php $username ?></h3>
+	<h3 Welcome <?php echo $username ?></h3>
 </body>
 </html>
