@@ -58,9 +58,7 @@ else {
 
 	<div class="row col-md-8">
 		<ul class="nav nav-tab">
-			<li><a data-toggle="tab" href="#view" class="btn btn-dark btn-tab">View Envelopes</a></li>
-			<li><a data-toggle="tab" href="#create" class="btn btn-dark btn-tab">Create Envelope</a></li>
-			
+			<li><a data-toggle="tab" href="#view" class="btn btn-dark btn-tab">View Envelopes</a></li>		
 		</ul>
 		<div class="tab-content" style="">
 			<div id="view" class="tab-pane active">
