@@ -16,6 +16,7 @@ else {
 				 envelope.id,
 				 color,
 				 name,
+				 warning,
 				 SUM (amount) AS total
 				FROM
 				 public.transaction
@@ -31,11 +32,11 @@ else {
 	$stmt->execute();
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
 	
-// 	foreach ($rowsArray as $row) {
-// 		echo $row['name'];
-// 		echo $row['total'];
-// 		echo '<br>';
-// 	}
+	foreach ($rowsArray as $row) {
+		if($row['total'] < $row['warning']){
+		//set color to be red!
+		$row['color'] = '#FF6347';
+	}
 }
 ?>
 	
@@ -47,11 +48,10 @@ else {
 		<nav>
 			<div class="navBar">
 				<ul>
-					<li><a href="login.php">Home</a></li>
+					<li><a href="signup.php">Home</a></li>
+					<li><a href="createEnvelope.php">Create Envelopes</a></li>
+					<li><a href="includes/logout.php">Logout</a></li>
 				</ul>
-				<form action="includes/logout.php" method="post">
-					<button type="submit" name="logout">Logout</button>
-				</form>
 			</div>
 		</nav>
 	</header>
