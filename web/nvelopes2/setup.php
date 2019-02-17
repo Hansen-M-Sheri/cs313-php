@@ -8,8 +8,8 @@ if(!isset($_SESSION['userID'])){
 }
 else {
 	$envelopeName = " ";
-	echo "GET: ";
-	echo $_GET;
+	// echo "GET: ";
+// 	echo $_GET;
 	//query for envelopes and display them
 	// echo "test";
 	$sql = ' SELECT
@@ -63,7 +63,7 @@ else {
 		<div class="tab-content" style="">
 			<div id="view" class="tab-pane active">
 				<?php
-					foreach ($rowsArray as $row) { ?>
+					foreach ($rowsArray as $row) : ?>
 						<div class="row">
 					      <div class="col-md-3 ">
 					        <div class="card-container">
@@ -78,9 +78,9 @@ else {
 						        </form>
 					          </div><!--body-->
 					        </div><!--card-->
-				<?php	}
+				<?php endforeach;
 				?>
-					<!-- Cards -->
+					</div><!-- Cards -->
     
       </div><!--column-->
       
