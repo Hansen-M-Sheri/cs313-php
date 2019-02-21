@@ -73,6 +73,7 @@ else {
 		          	<div class="card-body">
 				 		<i class="far fa-envelope fa-5x icon" ></i>
 				 	</div>
+				 	<h5 class="card-total"><?php echo $row['total']?></h5>
 				    <form action="transactions.php" method="POST">
 		            	<input type="hidden" name="envID" value="<?php echo $row['id']?>">
 		            	<button type="submit" name="add"class="btn btn-primary">Add transaction</button> 
