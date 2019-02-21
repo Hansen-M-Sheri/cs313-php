@@ -18,9 +18,9 @@
 	</header>
 	 <!-- Jumbotron -->
     <div class="jumbotron bg-info" id="banner">
-      <h1>Envelopes</h1>
-      <h3>View envelopes and current totals</h3>
-      <h5>Any envelopes with total below warning amount will be red</h5>
+      <h1>Nvelopes Budgeting App</h1>
+      <h3>Login</h3>
+      
   	</div>
   	<div class="container">
 		<form class="form-group col-md-6"action="includes/login_inc.php" method="POST" >

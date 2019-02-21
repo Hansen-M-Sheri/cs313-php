@@ -63,9 +63,8 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 	</header>
 	 <!-- Jumbotron -->
     <div class="jumbotron bg-info" id="banner">
-      <h1>Envelopes</h1>
-      <h3>View envelopes and current totals</h3>
-      <h5>Any envelopes with total below warning amount will be red</h5>
+      <h1>Transactions</h1>
+      <h3>View all deposits and withdrawls from one envelope</h3>
   	</div>
   	<div class="container">
 			<form class="form-inline" action="includes/insertTransaction_inc.php" method="POST">
@@ -80,7 +79,8 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 					<br>
 					<label for="amount">Amount</label>
 					$<input  type="number" min="0.01" step="0.01" name="amount" id="amount"> <br>
-					<input type="submit" name="submitLogin" class="btn btn-primary btn-block">
+					<input type="submit" name="Deposit" value="Deposit"class="btn btn-success ">
+					<input type="submit" name="Withdrawl" value="Withdrawl"class="btn btn-danger ">
 					<!-- <button type="button" name="addTransaction" class="btn btn-primary btn-block" onclick="addTransaction(<?php echo $envelopeID; ?>, <?php echo $_SESSION['userID']; ?>, $('#date').html(), $('#details').html(), $('#amount').html(),'add')"> Add Transaction </button> -->
 				
 			</form>
