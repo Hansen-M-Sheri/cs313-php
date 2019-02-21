@@ -8,9 +8,9 @@
 	<header>
 		<nav>
 			<div class="navBar">
-				<ul>
-					<li><a href="signup.php">Home</a></li>
-					<li><a href="signup.php">Signup</a></li>
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link" href="signup.php">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="signup.php">Signup</a></li>
 					
 				</ul>
 			</div>
@@ -19,11 +19,11 @@
 	 <!-- Jumbotron -->
     <div class="jumbotron bg-info" id="banner">
       <h1>Nvelopes Budgeting App</h1>
-      <h3>Login</h3>
+      
       
   	</div>
   	<div class="container">
-		<form class="form-group col-md-6"action="includes/login_inc.php" method="POST" >
+		<form class="form-group col-md-4 col-md-offset-4"action="includes/login_inc.php" method="POST" >
 			<center><h2>Login</h2></center><br>
 			<input type="text" placeholder="Email" name="email" class="form-control" required><br>
 			<input type="password" placeholder="Password" name="pwd" class="form-control" required><br>
