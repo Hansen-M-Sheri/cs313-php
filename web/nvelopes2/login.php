@@ -16,10 +16,18 @@
 			</div>
 		</nav>
 	</header>
-	<form class="form-group col-md-6"action="includes/login_inc.php" method="POST" >
-		<center><h2>Login</h2></center><br>
-		<input type="text" placeholder="Email" name="email" class="form-control" required><br>
-		<input type="password" placeholder="Password" name="pwd" class="form-control" required><br>
-		<input type="submit" name="submitLogin" class="btn btn-primary btn-block">
-	</form>	
+	 <!-- Jumbotron -->
+    <div class="jumbotron bg-info" id="banner">
+      <h1>Envelopes</h1>
+      <h3>View envelopes and current totals</h3>
+      <h5>Any envelopes with total below warning amount will be red</h5>
+  	</div>
+  	<div class="container">
+		<form class="form-group col-md-6"action="includes/login_inc.php" method="POST" >
+			<center><h2>Login</h2></center><br>
+			<input type="text" placeholder="Email" name="email" class="form-control" required><br>
+			<input type="password" placeholder="Password" name="pwd" class="form-control" required><br>
+			<input type="submit" name="submitLogin" class="btn btn-primary btn-block">
+		</form>	
+	</div>
 <?php include "templates/footer.php"; ?>

@@ -61,60 +61,73 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 			</div>
 		</nav>
 	</header>
-	<div class="row col-md-8">
-		<ul class="nav nav-tab">
-			<li><a data-toggle="tab" href="#menu1" class="btn btn-dark btn-tab">Transactions</a></li>
-		</ul>
-		<div class="tab-content" style="">
-			<div id="menu1" class="tab-pane active">
-				<!-- ADD A TRANSACTION -->
-				<h3>Add a Transaction</h3>
-				<form class="form-inline" action="includes/insertTransaction_inc.php" method="POST">
-					
-						<input type="hidden" name="envelopeID" value="<?php echo $envelopeID; ?>">
-						<input type="hidden" name="userID" value="<?php echo $_SESSION['userID']; ?>">
-						<label for="date">Date</label>
-						<input  type="date" name="date" id="date"> 
-						<br>
-						<label for="details">Transaction Details</label>
-						<input  type="text" name="details" id="details"> 
-						<br>
-						<label for="amount">Amount</label>
-						$<input  type="number" min="0.01" step="0.01" name="amount" id="amount"> <br>
-						<input type="submit" name="submitLogin" class="btn btn-primary btn-block">
-						<!-- <button type="button" name="addTransaction" class="btn btn-primary btn-block" onclick="addTransaction(<?php echo $envelopeID; ?>, <?php echo $_SESSION['userID']; ?>, $('#date').html(), $('#details').html(), $('#amount').html(),'add')"> Add Transaction </button> -->
-					
-				</form>
-				<hr>
-				<h3>Transaction List</h3>
-				<table class="table table-striped table-bordered">
-					<thead>
-						<tr>
-							<th>Date</th>
-							<th>Details</th>
-							<th>Amount</th>
-						</tr>
-					</thead>
-					
-					
-					<tbody>
-						<?php foreach($rowsArray as $row): ?>
-						<tr>
-							<td><?php echo $row['date'] ?></td>
-							<td><?php echo $row['details'] ?></td>
-							<td><?php echo $row['amount'] ?></td>
-						</tr>
-						<?php endforeach; ?>
-					<tbody>
-				</table>
+	 <!-- Jumbotron -->
+    <div class="jumbotron bg-info" id="banner">
+      <h1>Envelopes</h1>
+      <h3>View envelopes and current totals</h3>
+      <h5>Any envelopes with total below warning amount will be red</h5>
+  	</div>
+  	<div class="container">
+			<form class="form-inline" action="includes/insertTransaction_inc.php" method="POST">
 				
-      		</div><!--column-->
-  	</div><!--row-->
-					
-
+					<input type="hidden" name="envelopeID" value="<?php echo $envelopeID; ?>">
+					<input type="hidden" name="userID" value="<?php echo $_SESSION['userID']; ?>">
+					<label for="date">Date</label>
+					<input  type="date" name="date" id="date"> 
+					<br>
+					<label for="details">Transaction Details</label>
+					<input  type="text" name="details" id="details"> 
+					<br>
+					<label for="amount">Amount</label>
+					$<input  type="number" min="0.01" step="0.01" name="amount" id="amount"> <br>
+					<input type="submit" name="submitLogin" class="btn btn-primary btn-block">
+					<!-- <button type="button" name="addTransaction" class="btn btn-primary btn-block" onclick="addTransaction(<?php echo $envelopeID; ?>, <?php echo $_SESSION['userID']; ?>, $('#date').html(), $('#details').html(), $('#amount').html(),'add')"> Add Transaction </button> -->
+				
+			</form>
+			<hr>
+			<h3>Transaction List</h3>
+			<table class="table table-striped table-bordered">
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Details</th>
+						<th>Deposits</th>
+						<th>Withdrawls</th>
+						<th></th><!-- PUT EDIT/REMOVE OPTION IN THIS COLUMN-->
+					</tr>
+				</thead>
+				
+				
+				<tbody>
+					<?php foreach($rowsArray as $row): ?>
+					<tr>
+						<td><?php echo $row['date'] ?></td>
+						<td><?php echo $row['details'] ?></td>
+						<?php if($row['amount'] < 0){ ?>
+							<td></td> <!-- Leave blank, no deposit amount-->
+							<td><?php echo $row['amount'] ?></td>
+						<?php } else { ?>
+							<td><?php echo $row['amount'] ?></td>
+							<td></td> <!-- Leave blank, no withdrawl amount-->
+							<td>
+							<!-- <a href="adjustTransaction_inc.php?type=edit"><i class="far fa-edit"></i></a> -->
+							<a href="adjustTransaction_inc.php?type=remove.".<?php echo $row['id']?>><i class="far fa-trash-alt"></i></a>
+						</td>
+						<?php } ?>
+						<!-- ADD ICONS TO ALLOW FOR EDITS/REMOVING TRANSACTIONS-->
+						
+					</tr>
+					<?php endforeach; ?>
+				<tbody>
+			</table>
 			
+  		</div><!--column-->
+	</div><!--row-->
+				
 
-	</div>
+		
+
+</div>
 
 	<script>
 		function addTransaction(envelopeID, userID, date, details, amount, type) {
