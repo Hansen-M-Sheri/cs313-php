@@ -57,37 +57,29 @@ else {
 		</nav>
 	</header>
 
-	<div class="row col-md-8">
-		<ul class="nav nav-tab">
-			<li><a data-toggle="tab" href="#view" class="btn btn-dark btn-tab">View Envelopes</a></li>		
-		</ul>
-		<div class="tab-content" style="">
-			<div id="view" class="tab-pane active">
-				<?php
-					foreach ($rowsArray as $row) : ?>
-						<div class="row">
-					      <div class="col-md-3 ">
-					        <div class="card-container">
-					        	
-					        	<i class="far fa-envelope fa-6x icon" style="background: <?php echo$row['color']?>"></i>
-					          <div class="card-body">
-					            <h4><?php echo $row['name']?></h4>
-					            <h4><?php echo $row['total']?></h4>
-					            <form action="transactions.php" method="POST">
-						            <input type="hidden" name="envID" value="<?php echo $row['id']?>">
-						            <button type="submit" name="add"class="btn btn-primary">Add transaction</button> 
-						        </form>
-					          </div><!--body-->
-					        </div><!--card-->
-				<?php endforeach;
-				?>
-					</div><!-- Cards -->
-    
-      </div><!--column-->
-      
-      
-  </div><!--row-->
-</div>
-</div>
+	 <!-- Jumbotron -->
+    <div class="jumbotron bg-info" id="banner">
+      <h1>Envelopes</h1>
+      <h3>View envelopes and current totals</h3>
+      <h5>Any envelopes with total below warning amount will be red</h5>
+  </div>
+    </div>
+		<div class="row">
+		<?php foreach ($rowsArray as $row) : ?>
+				
+			<div class="col-md-4 ">
+			    <div class="card mb-4 bg-secondary box-shadow">
+		          	<h5 class="card-title"><?php echo $row['name']?></h5>
+				 	<i class="card-body far fa-envelope fa-6x icon" style="background: <?php echo$row['color']?>"></i>
+				    <form action="transactions.php" method="POST">
+		            	<input type="hidden" name="envID" value="<?php echo $row['id']?>">
+		            	<button type="submit" name="add"class="btn btn-primary">Add transaction</button> 
+	        		</form>
+		         </div><!--body-->
+		       <!--  </div>card -->
+		    </div><!--column-->      
+		<?php endforeach;?>
+		</div><!-- Cards -->
+
 
 <?php include "templates/footer.php"; ?>
