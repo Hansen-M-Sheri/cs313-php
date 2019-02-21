@@ -16,7 +16,7 @@ else {
 				 envelope.id,
 				 color,
 				 name,
-				 warning,
+				 warningamount,
 				 SUM (amount) AS total
 				FROM
 				 public.transaction
@@ -33,7 +33,7 @@ else {
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
 	
 	foreach ($rowsArray as $row) {
-		if($row['total'] < $row['warning']){
+		if($row['total'] < $row['warningamount']){
 		//set color to be red!
 		$row['color'] = '#FF6347';
 		}
