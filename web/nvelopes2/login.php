@@ -6,9 +6,9 @@
 </head>
 <body>
 	<header>
-		<nav class="navBar navbar-expand-sm bg-light" >
+		<nav class="navBar navbar-expand-sm bg-dark navbar-dark" >
 			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link" href="signup.php">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="signup.php active">Home</a></li>
 				<li class="nav-item"><a class="nav-link" href="signup.php">Signup</a></li>
 				
 			</ul>
