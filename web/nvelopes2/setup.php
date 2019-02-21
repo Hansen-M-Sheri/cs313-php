@@ -36,6 +36,7 @@ else {
 		if($row['total'] < $row['warning']){
 		//set color to be red!
 		$row['color'] = '#FF6347';
+		}
 	}
 }
 ?>
