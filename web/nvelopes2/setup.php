@@ -69,8 +69,10 @@ else {
 				
 			<div class="col-md-4 ">
 			    <div class="card mb-4 box-shadow" style="background: <?php echo$row['color']?>">
-		          	<h5 class="card-title"><?php echo $row['name']?></h5>
-				 	<i class="card-body far fa-envelope fa-3x icon" ></i>
+		          	<h3 class="card-title"><?php echo $row['name']?></h3>
+		          	<div class="card-body">
+				 		<i class="far fa-envelope fa-5x icon" ></i>
+				 	</div>
 				    <form action="transactions.php" method="POST">
 		            	<input type="hidden" name="envID" value="<?php echo $row['id']?>">
 		            	<button type="submit" name="add"class="btn btn-primary">Add transaction</button> 
