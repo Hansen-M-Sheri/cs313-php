@@ -68,9 +68,9 @@ else {
 		<?php foreach ($rowsArray as $row) : ?>
 				
 			<div class="col-md-4 ">
-			    <div class="card mb-4 bg-secondary box-shadow">
+			    <div class="card mb-4 box-shadow" style="background: <?php echo$row['color']?>">
 		          	<h5 class="card-title"><?php echo $row['name']?></h5>
-				 	<i class="card-body far fa-envelope fa-6x icon" style="background: <?php echo$row['color']?>"></i>
+				 	<i class="card-body far fa-envelope fa-3x icon" ></i>
 				    <form action="transactions.php" method="POST">
 		            	<input type="hidden" name="envID" value="<?php echo $row['id']?>">
 		            	<button type="submit" name="add"class="btn btn-primary">Add transaction</button> 
