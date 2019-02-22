@@ -51,7 +51,7 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 	<header>
 		<nav class="navBar navbar-expand-sm bg-dark navbar-dark" >
 			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link" href="login.php active">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="login.php" >Home</a></li>
 				<li class="nav-item"><a class="nav-link" href="setup.php">Envelopes</a></li>
 				<li class="nav-item"><a class="nav-link" href="createEnvelope.php">Create Envelopes</a></li>
 				<li class="nav-item"><a class="nav-link" href="includes/logout.php">Logout</a></li>
@@ -76,10 +76,10 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 					<input  type="text" name="details" id="details" placeholder="Transaction details" class="form-control mb-2 mr-sm-2"> 
 					<!-- <br> -->
 					<label for="amount" class="mr-sm-2">Amount:</label>
-					$<input  type="number" min="0.01" step="0.01" name="amount" id="amount" class="form-control mb-2 mr-sm-2"> <!-- <br> -->
+					$<input  type="number" min="0.01" step="0.01" name="amount" id="amount" class="form-control mb-2 mr-sm-2" placeholder="0.00"> <!-- <br> -->
 					<div class="buttons">
-						<input type="submit" name="Deposit" value="Deposit"class="btn btn-success mb-2">
-						<input type="submit" name="Withdrawl" value="Withdrawl"class="btn btn-danger mb-2">
+						<input type="submit" name="deposit" value="Deposit"class="btn btn-success mb-2">
+						<input type="submit" name="withdrawl" value="Withdrawl"class="btn btn-danger mb-2">
 					</div>
 					<!-- <button type="button" name="addTransaction" class="btn btn-primary btn-block" onclick="addTransaction(<?php echo $envelopeID; ?>, <?php echo $_SESSION['userID']; ?>, $('#date').html(), $('#details').html(), $('#amount').html(),'add')"> Add Transaction </button> -->
 				

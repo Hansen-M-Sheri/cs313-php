@@ -9,7 +9,12 @@ if(isset($_POST['envelopeID'])) {
 	$details 	= htmlspecialchars($_POST['details']);
 	$amount 	= htmlspecialchars($_POST['amount']);
 	
-	//validate items - convert date to store epoch in db
+	if(isset($_POST['deposit'])){
+		$amount = abs($amount); //take absolute value of item
+	}
+	else {
+		$amount*= -1; //make value negative
+	}
 
 	$sql = 'INSERT INTO public.transaction (envelopeid, userid, date, details, amount) VALUES (:envelopeID, :userID, :date, :details, :amount)';
 	$stmt = $db->prepare($sql);
