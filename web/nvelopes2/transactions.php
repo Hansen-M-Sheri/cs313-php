@@ -106,6 +106,9 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 						<?php if($row['amount'] < 0){ ?>
 							<td></td> <!-- Leave blank, no deposit amount-->
 							<td><?php echo $row['amount'] ?></td>
+							<td>
+								<a href="adjustTransaction_inc.php?type=remove.".<?php echo $row['id']?>><i class="far fa-trash-alt"></i></a>
+							</td>
 						<?php } else { ?>
 							<td><?php echo $row['amount'] ?></td>
 							<td></td> <!-- Leave blank, no withdrawl amount-->
