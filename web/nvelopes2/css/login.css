@@ -16,3 +16,6 @@ card-body{
 	text-align: center;
 }
 	
+.card-edit{
+	float:right;
+	}
