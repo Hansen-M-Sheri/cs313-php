@@ -40,7 +40,12 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 		$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
 		}
 	}
-	// echo var_dump(count($rowsArray));
+	//get envelope name to display
+	$sql = 'SELECT name FROM envelope WHERE id=:id';
+	$stmt = $db->prepare($sql);
+	$stmt->bindValue(':id', $envelopeID);
+	$stmt->execute();
+	$envelopeName = $stmt->fetch();
 ?>
 <!-- Login form - process with login_inc.php-->
 	
@@ -61,7 +66,7 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 	</header>
 	 <!-- Jumbotron -->
     <div class="jumbotron bg-info" id="banner">
-      <h1>Transactions</h1>
+      <h1>Transactions for <?php echo $envelopeName ?></h1>
       <h3>View all deposits and withdrawls from one envelope</h3>
   	</div>
   	<div class="container">
