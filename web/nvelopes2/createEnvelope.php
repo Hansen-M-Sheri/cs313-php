@@ -51,7 +51,7 @@ else {
       <h3>Create a new envelope and start choosing where your money will go</h3>
   	</div>
   	<div class="container">
-		<form id="createEnvelope"action="includes/envelope_inc.php" method="post" class="form-group col-md-6">
+		<form id="createEnvelope"action="includes/envelope_inc.php" method="post" class="form-group col-md-6 col-md-offset-3">
 			<center><h2>Create Envelope</h2></center><br>
 			<input type="text" placeholder="Envelope Name" name="name" class="form-control" required><br>
 			<input type="text" placeholder="Description" name="desc" class="form-control" required><br>
