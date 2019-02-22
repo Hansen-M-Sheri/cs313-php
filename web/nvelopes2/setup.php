@@ -60,24 +60,20 @@ else {
 		<div class="row">
 		<?php foreach ($rowsArray as $row) {
 			if($row['total'] < $row['warningamount']){
-		//set color to be red!
-		$row['color'] = '#FF6347';
-		// echo "Color: ";
-		// echo $row['color'];
-		// echo "total: ";
-		// echo $row['total'];
-		// echo "Warning Amount: ";
-
-		// echo $row['warningamount'];
+			//set color to be red! if total is below warning amount
+			$row['color'] = '#FF6347';
 		}?>
 				
-			<div class="col-md-4 ">
-			    <div class="card mb-4 box-shadow" style="background: <?php echo$row['color']?>">
+			<div class="col-md-3 ">
+			    <div class="card mb-3 box-shadow" style="background: <?php echo$row['color']?>">
+		    		<div class="card-edit">
+		    			<a href="adjustTransaction_inc.php?type=edit"><i class="far fa-edit"></i></a>
+		    		</div>
 		          	<h3 class="card-title"><?php echo $row['name']?></h3>
 		          	<div class="card-body">
 				 		<i class="far fa-envelope fa-5x icon" ></i>
 				 	</div>
-				 	<h5 class="card-total"><?php echo $row['total']?></h5>
+				 	<h3 class="card-total">$<?php echo $row['total']?></h3>
 				    <form action="transactions.php" method="POST">
 		            	<input type="hidden" name="envID" value="<?php echo $row['id']?>">
 		            	<button type="submit" name="add"class="btn btn-primary">Add transaction</button> 
