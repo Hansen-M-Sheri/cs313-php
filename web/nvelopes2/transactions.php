@@ -69,16 +69,18 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 				
 					<input type="hidden" name="envelopeID" value="<?php echo $envelopeID; ?>">
 					<input type="hidden" name="userID" value="<?php echo $_SESSION['userID']; ?>">
-					<label for="date">Date</label>
+					<!-- <label for="date">Date</label> -->
 					<input  type="date" name="date" id="date"> 
-					<br>
-					<label for="details">Transaction Details</label>
-					<input  type="text" name="details" id="details"> 
-					<br>
-					<label for="amount">Amount</label>
-					$<input  type="number" min="0.01" step="0.01" name="amount" id="amount"> <br>
-					<input type="submit" name="Deposit" value="Deposit"class="btn btn-success ">
-					<input type="submit" name="Withdrawl" value="Withdrawl"class="btn btn-danger ">
+					<!-- <br> -->
+					<!-- <label for="details">Transaction Details</label> -->
+					<input  type="text" name="details" id="details" placeholder="Transaction details"> 
+					<!-- <br> -->
+					<!-- <label for="amount">Amount</label> -->
+					$<input  type="number" min="0.01" step="0.01" name="amount" id="amount"> <!-- <br> -->
+					<div class="buttons">
+						<input type="submit" name="Deposit" value="Deposit"class="btn btn-success ">
+						<input type="submit" name="Withdrawl" value="Withdrawl"class="btn btn-danger ">
+					</div>
 					<!-- <button type="button" name="addTransaction" class="btn btn-primary btn-block" onclick="addTransaction(<?php echo $envelopeID; ?>, <?php echo $_SESSION['userID']; ?>, $('#date').html(), $('#details').html(), $('#amount').html(),'add')"> Add Transaction </button> -->
 				
 			</form>
