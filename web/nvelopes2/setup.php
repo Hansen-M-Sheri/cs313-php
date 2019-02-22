@@ -32,20 +32,6 @@ else {
 	$stmt->execute();
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
 	
-	foreach ($rowsArray as $row) {
-
-		if($row['total'] < $row['warningamount']){
-		//set color to be red!
-		$row['color'] = '#FF6347';
-		echo "Color: ";
-		echo $row['color'];
-		echo "total: ";
-		echo $row['total'];
-		echo "Warning Amount: ";
-
-		echo $row['warningamount'];
-		}
-	}
 }
 ?>
 	
@@ -72,7 +58,18 @@ else {
   	</div>
     </div>
 		<div class="row">
-		<?php foreach ($rowsArray as $row) : ?>
+		<?php foreach ($rowsArray as $row) {
+			if($row['total'] < $row['warningamount']){
+		//set color to be red!
+		$row['color'] = '#FF6347';
+		// echo "Color: ";
+		// echo $row['color'];
+		// echo "total: ";
+		// echo $row['total'];
+		// echo "Warning Amount: ";
+
+		// echo $row['warningamount'];
+		}?>
 				
 			<div class="col-md-4 ">
 			    <div class="card mb-4 box-shadow" style="background: <?php echo$row['color']?>">
@@ -88,7 +85,7 @@ else {
 		         </div><!--body-->
 		       <!--  </div>card -->
 		    </div><!--column-->      
-		<?php endforeach;?>
+		<?php }?>
 		</div><!-- Cards -->
 
 
