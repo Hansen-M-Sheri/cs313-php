@@ -45,7 +45,8 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 	$stmt = $db->prepare($sql);
 	$stmt->bindValue(':id', $envelopeID);
 	$stmt->execute();
-	$envelopeName = $stmt->fetch();
+	$result = $stmt->fetch()
+	$envelopeName = $result[0];
 ?>
 <!-- Login form - process with login_inc.php-->
 	
