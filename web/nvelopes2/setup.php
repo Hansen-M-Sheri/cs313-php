@@ -33,9 +33,17 @@ else {
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
 	
 	foreach ($rowsArray as $row) {
+
 		if($row['total'] < $row['warningamount']){
 		//set color to be red!
 		$row['color'] = '#FF6347';
+		echo "Color: ";
+		echo $row['color'];
+		echo "total: ";
+		echo $row['total'];
+		echo "Warning Amount: ";
+
+		echo $row['warningamount'];
 		}
 	}
 }

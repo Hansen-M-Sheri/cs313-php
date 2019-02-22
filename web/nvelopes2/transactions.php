@@ -67,7 +67,7 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 	</header>
 	 <!-- Jumbotron -->
     <div class="jumbotron bg-info" id="banner">
-      <h1>Transactions for <?php echo $envelopeName ?></h1>
+      <h1><?php echo $envelopeName ?> Transactions</h1>
       <h3>View all deposits and withdrawls from one envelope</h3>
   	</div>
   	<div class="container">
