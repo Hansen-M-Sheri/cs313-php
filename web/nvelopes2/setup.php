@@ -46,14 +46,13 @@ else {
 </head>
 <body>
 	<header>
-		<nav>
-			<div class="navBar">
-				<ul>
-					<li><a href="signup.php">Home</a></li>
-					<li><a href="createEnvelope.php">Create Envelopes</a></li>
-					<li><a href="includes/logout.php">Logout</a></li>
-				</ul>
-			</div>
+		<nav class="navBar navbar-expand-sm bg-dark navbar-dark" >
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" href="login.php">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="createEnvelope.php">Create Envelope</a></li>
+				<li class="nav-item"><a class="nav-link" href="includes/logout.php.php">Logout</a></li>
+				
+			</ul>
 		</nav>
 	</header>
 
@@ -62,7 +61,7 @@ else {
       <h1>Envelopes</h1>
       <h3>View envelopes and current totals</h3>
       <h5>Any envelopes with total below warning amount will be red</h5>
-  </div>
+  	</div>
     </div>
 		<div class="row">
 		<?php foreach ($rowsArray as $row) : ?>

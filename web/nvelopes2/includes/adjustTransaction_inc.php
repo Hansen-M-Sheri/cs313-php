@@ -4,11 +4,12 @@ if(!isset($_GET['type'])){
 	die();
 }
 else {
-	if($_GET['type'] == 'edit'){
-		//update the form?  This will be harder - do it last
+	if($_GET['type'] == 'remove'){
+		
 
 	}
-	else if($_GET['type'] == 'remove'){
-		//delete from db 
+	else if($_GET['type'] == 'edit'){
+		//update the form?  This will be harder - do it last
+		
 	}
 }

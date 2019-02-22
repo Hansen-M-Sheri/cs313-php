@@ -7,14 +7,10 @@
 </head>
 <body>
 	<header>
-		<nav>
-			<div class="navBar">
-				<ul>
-					<li><a href="signup.php">Home</a></li>
-					<li><a href="login.php">Login</a></li>
-					
-				</ul>
-			</div>
+		<nav class="navBar navbar-expand-sm bg-dark navbar-dark" >
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>				
+			</ul>
 		</nav>
 	</header>
 	<!-- Nav bar to HOME = signup, Login button-->
