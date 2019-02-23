@@ -28,7 +28,7 @@ else {
 				 id=:envelopeID';
 	// echo $sql;
 	$stmt = $db->prepare($sql);
-	$stmt->bindValue(':envelopeID', $_GET['envelopeID']);
+	$stmt->bindValue(':envelopeID', $_GET['envID']);
 	$stmt->execute();
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
 	echo var_dump($rowsArray);
