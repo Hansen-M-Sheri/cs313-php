@@ -1,5 +1,5 @@
 <?php
-
+include 'dbh_inc.php';
 if (isset($_POST['submitSignup'])){
 
 	$fName = htmlspecialchars($_POST['fName']);
