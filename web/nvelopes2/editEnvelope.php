@@ -11,6 +11,20 @@ else if(!isset($_GET['envID'])){
 		header("Location: setup.php?error=envID");
 		die();
 	}
+else if(isset($_GET['envelope'])){
+	$error = $_GET['envelope'];
+	$errMsg = "";
+	if($error == 'empty'){
+		$errMsg = "All fields must be filled in";
+	}
+	else if ($error == 'invalidName'){
+		$errMsg = "Please enter a valid envelope name containing letters only";
+	}
+	else if ($error == 'error'){
+		$errMsg = "There was an error creating your envelope, please try again later";
+	}
+	
+}
 else {
 	
 	//get current data from field, to pre-populate info to allow user to edit it
@@ -58,6 +72,10 @@ else {
       <h1>Edit <?php echo $envelopeName ?> Envelope </h1>
       <h3>Edit the settings for your envelope</h3>
   	</div>
+  	<?php
+  		if(!empty($error)){
+  			echo "<div class='error'>".$errMsg."</div>";
+  		}?>
   	<div class="container">
 		<form id="createEnvelope"action="includes/editEnvelope_inc.php" method="post" class="form-group col-md-6 col-md-offset-3">
 			<input type="hidden" name="envID" value="<?php echo $_GET['envID']?>">
