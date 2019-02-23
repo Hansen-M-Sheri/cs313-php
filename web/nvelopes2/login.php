@@ -1,8 +1,28 @@
-<?php include "templates/header.php";?>
-<!-- Login form - process with login_inc.php-->
+<?php 
+include "templates/header.php";
+// Handle any errors
+if(isset($_GET['login'])){
+	$error = $_GET['login'];
+	$errMsg = "";
+	if($error == 'email'){
+		$errMsg = "Please enter a valid email";
+	}
+	else if ($error == 'signup'){
+		$errMsg = "That email isn't in our system, please signup";
+	}
+	else if($error == 'error'){
+		$errMsg = "Login email or password does not match what we have in our system, please try again";
+	}
+	else if($error == 'invalidName'){
+		$errMsg = "Login email or password does not match what we have in our system, please try again";
+	}
+}
+
+?>
+
 	
 	<title>LOGIN to Nvelopes</title>
-	<link rel="stylesheet" type="text/css" href="css/login.css">
+	
 </head>
 <body>
 	<header>
@@ -15,10 +35,13 @@
 	</header>
 	 <!-- Jumbotron -->
     <div class="jumbotron bg-info" id="banner">
-      <h1>Nvelopes Budgeting App</h1>
-      
-      
+      <h1>Nvelopes Budgeting App</h1>      
   	</div>
+  	<?php
+  		if(!empty($error)){
+  			echo "<div class='error'>".$errMsg."</div>";
+  		}?>
+  	
   	<div class="container">
 		<form class="form-group col-md-4 col-md-offset-4"action="includes/login_inc.php" method="POST" >
 			<center><h2>Login</h2></center><br>

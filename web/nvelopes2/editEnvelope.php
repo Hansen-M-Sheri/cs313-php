@@ -31,7 +31,7 @@ else {
 	$stmt->bindValue(':envelopeID', $_GET['envID']);
 	$stmt->execute();
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
-	echo var_dump($rowsArray);
+	
 	$envelopeName = $rowsArray[0]['name'];
 	$description = $rowsArray[0]['description'];
 	$color = $rowsArray[0]['color'];
