@@ -47,6 +47,24 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 	$stmt->execute();
 	$result = $stmt->fetch();
 	$envelopeName = $result[0];
+
+	//get total of envelope
+	$sql = ' SELECT
+				 SUM (amount) AS total
+				FROM
+				 public.transaction
+				 INNER JOIN public.envelope
+				 ON transaction.envelopeid = envelope.id
+				 WHERE
+				 userid = :userID
+				GROUP BY
+				 name, envelope.id;';
+	// echo $sql;
+	$stmt = $db->prepare($sql);
+	$stmt->bindValue(':userID', $_SESSION['userID']);
+	$stmt->execute();
+	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
+	$total = $rowsArray[0]['total'];
 ?>
 <!-- Login form - process with login_inc.php-->
 	
@@ -91,7 +109,13 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 				
 			</form>
 			<hr>
-			<h3>Transaction List</h3>
+			<!-- Print total for envelope -->
+			<table class="table table-striped table-bordered">
+					<tr>
+						<td>Envelope Total</td>
+						<td><?php $total ?></td>
+					</tr>
+					<
 			<table class="table table-striped table-bordered">
 				<thead>
 					<tr>
@@ -120,13 +144,12 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 							<td></td> <!-- Leave blank, no withdrawl amount-->
 							<td>
 							<!-- <a href="adjustTransaction_inc.php?type=edit"><i class="far fa-edit"></i></a> -->
-							<a href="editEnvelope_inc.php?envelopeID=.".<?php echo $row['id']?>><i class="far fa-trash-alt"></i></a>
+							<a href="editEnvelope_inc.php?envelopeID=.".<?php echo $row['id']?>><i class="far fa-trash-alt trash"></i></a>
 						</td>
 						<?php } ?>
-						<!-- ADD ICONS TO ALLOW FOR EDITS/REMOVING TRANSACTIONS-->
-						
 					</tr>
 					<?php endforeach; ?>
+					
 				<tbody>
 			</table>
 			

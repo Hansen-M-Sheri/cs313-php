@@ -90,7 +90,7 @@ else {
 		    		
 		          	<h3 class="card-title blank">Add an Envelope</h3>
 		          	<div class="card-body blank">
-				 		<a href="createEnvelope.php"><i class="far fa-plus-square blank"></i></a>
+				 		<a href="createEnvelope.php"><i class="far fa-plus-square fa-5x blank"></i></a>
 				 	</div>
 				 	
 		         </div><!--body-->
