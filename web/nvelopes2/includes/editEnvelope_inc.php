@@ -13,8 +13,17 @@ if(isset($_POST['editEnvelope'])){
 	$color		= htmlspecialchars($_POST['color']);
 
 	if(empty($id) || empty($description) || empty($warningAmt) || empty($color)){
-		header("Location: ../editEnvelope.php?envelope=empty");
-		exit();
+		echo "empty variable";
+		echo "id: ";
+		echo $id;
+		echo "description: ";
+		echo $description;
+		echo "warningAmt: ";
+		echo $warningAmt;
+		echo "color: ";
+		echo $color;
+		// header("Location: ../editEnvelope.php?envelope=empty");
+		// exit();
 	}
 	else {
 		$sql = 'UPDATE public.envelope SET description=:description, warningamount=:warningamount, color=:color WHERE id=:id;';
@@ -35,8 +44,9 @@ if(isset($_POST['editEnvelope'])){
 	}			
 }
 else {
-	header("Location: ../setup.php?update=accidental");
-	die();
+	echo "editEnvelope not set";
+	// header("Location: ../setup.php?update=accidental");
+	// die();
 }
 
 
