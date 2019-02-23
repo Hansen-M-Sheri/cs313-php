@@ -29,11 +29,14 @@ if(isset($_POST['editEnvelope'])){
 		// 	header("Location: ../editEnvelope.php?create=error");
 		// } else {
 			//redirect to envelope page
-			header("Location: ../setup.php?update=success");
+		echo "success";
+			// header("Location: ../setup.php?update=success");
 		// }
-	}
-	
-			
+	}			
+}
+else {
+	header("Location: ../setup.php?update=accidental");
+	die();
 }
 
 
