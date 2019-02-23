@@ -19,3 +19,7 @@ card-body{
 .card-edit{
 	float:right;
 	}
+
+h3, i {
+color: white;
+}

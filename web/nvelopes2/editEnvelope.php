@@ -6,32 +6,38 @@ if(!isset($_SESSION['userID'])){
 	header("Location: login.php?login=noAuth");
 	exit();
 }
+else if(!isset($_GET['envelopeID'])){
+		header("Location: setup.php?error=envID");
+		die();
+	}
 else {
+	
+	//get current data from field, to pre-populate info to allow user to edit it
 	$envelopeName = " ";
 	//query for envelopes and display them
 	// echo "test";
 	$sql = ' SELECT
-				 envelope.id,
-				 color,
 				 name,
-				 SUM (amount) AS total
+				 description,
+				 color,
+				 warningamount
 				FROM
-				 public.transaction
-				 INNER JOIN public.envelope
-				 ON transaction.envelopeid = envelope.id
+				 public.envelope
 				 WHERE
-				 userid = :userID
-				GROUP BY
-				 name, envelope.id;';
+				 id = :envelopeID';
 	// echo $sql;
 	$stmt = $db->prepare($sql);
-	$stmt->bindValue(':userID', $_SESSION['userID']);
+	$stmt->bindValue(':envelopeID', $_GET['envelopeID']);
 	$stmt->execute();
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
+	$envelopName = $rowsArray[0]['name'];
+	$description = $rowsArray[0]['description'];
+	$color = $rowsArray[0]['color'];
+	$warningamount = $rowsArray[0]['warningamount'];
 }
 ?>
 	
-	<title>Create Nvelopes</title>
+	<title>Edit Nvelopes</title>
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
@@ -47,20 +53,19 @@ else {
 	</header>
 	<!-- Jumbotron -->
     <div class="jumbotron bg-info" id="banner">
-      <h1>Create </h1>
-      <h3>Create a new envelope and start choosing where your money will go</h3>
+      <h1>Edit <?php echo $envelopeName ?> Envelope </h1>
+      <h3>Edit the settings for your envelope</h3>
   	</div>
   	<div class="container">
-		<form id="createEnvelope"action="includes/envelope_inc.php" method="post" class="form-group col-md-6 col-md-offset-3">
-			<center><h2>Create Envelope</h2></center><br>
-			<input type="text" placeholder="Envelope Name" name="name" class="form-control" required><br>
-			<input type="text" placeholder="Description" name="desc" class="form-control" required><br>
+		<form id="createEnvelope"action="includes/editEnvelope_inc.php" method="post" class="form-group col-md-6 col-md-offset-3">
+			
+			<input type="textarea" value=<?php echo $description ?> name="desc" class="form-control" required><br>
 				
-			<input type="number" placeholder="Warning amount ie: 5.00" name="warningAmount" class="form-control" required>
+			<input type="number" value=<?php echo $warningamount ?> name="warningAmount" class="form-control" required>
 			<p>If envelope total drops below warning value, envelope will turn red</p><br>
-			<input type="color" placeholder="" name="color" class="form-control" required>
+			<input type="color" value=<?php echo $color ?> name="color" class="form-control" required>
 			<p>Select color for envelope. **</p><br>
-			<input type="submit" name="createEnvelope" class="btn btn-primary btn-block" value="Create Envelope">
+			<input type="submit" name="editEnvelope" class="btn btn-primary btn-block" value="Save Envelope Settings">
 		</form>	
 			
   </div>
