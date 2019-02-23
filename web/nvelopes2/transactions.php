@@ -113,7 +113,7 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 			<table class="table table-striped table-bordered">
 					<tr>
 						<th>Envelope Total</td>
-						<th><?php echo $total ?></td>
+						<th>$<?php echo $total ?></td>
 					</tr>
 					
 			<table class="table table-striped table-bordered">
@@ -137,7 +137,7 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 							<td></td> <!-- Leave blank, no deposit amount-->
 							<td><?php echo $row['amount'] ?></td>
 							<td>
-								<a href="adjustTransaction_inc.php?type=remove.".<?php echo $row['id']?>><i class="far fa-trash-alt"></i></a>
+								<a href="adjustTransaction_inc.php?type=remove.".<?php echo $row['id']?>><i class="far fa-trash-alt trash"></i></a>
 							</td>
 						<?php } else { ?>
 							<td><?php echo $row['amount'] ?></td>
