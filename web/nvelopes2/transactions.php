@@ -72,6 +72,8 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 	$stmt->execute();
 	$result = $stmt->fetchALL(PDO::FETCH_ASSOC);
 	$total = $result[0]['total'];
+
+
 ?>
 <!-- Login form - process with login_inc.php-->
 	
@@ -146,14 +148,15 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 							<td></td> <!-- Leave blank, no deposit amount-->
 							<td><?php echo $row['amount'] ?></td>
 							<td>
-								<a href="includes/adjustTransaction_inc.php?transactionID=.".<?php echo $row['id']?>><i class="far fa-trash-alt trash"></i></a>
+								<!-- <a href="includes/adjustTransaction_inc.php?transactionID=.".<?php echo $param?>><i class="far fa-trash-alt trash"></i></a> -->
 							</td>
 						<?php } else { ?>
 							<td><?php echo $row['amount'] ?></td>
 							<td></td> <!-- Leave blank, no withdrawal amount-->
 							<td>
-								<?php $href = "includes/adjustTransaction_inc.php?transactionID=$row['id']&envelopeID=$envelopeID";?>
-							<a href=<?php echo $href ?><i class="far fa-trash-alt trash"></i></a>
+								<?php $href = "transactionID={$row['id']}&envelopeID={$envelopeID}";
+};?>
+							<a href="includes/adjustTransaction_inc.php?<?php echo $href; ?>"><i class="far fa-trash-alt trash"></i></a>
 						</td>
 						<?php } ?>
 					</tr>
