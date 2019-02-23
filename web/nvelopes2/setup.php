@@ -84,6 +84,19 @@ else {
 		       <!--  </div>card -->
 		    </div><!--column-->      
 		<?php }?>
+		<!-- BLANK CARD WITH SYMBOL TO ADD CARD -->
+		<div class="col-md-3 ">
+			    <div class="card mb-3 box-shadow" >
+		    		
+		          	<h3 class="card-title blank">Add an Envelope</h3>
+		          	<div class="card-body blank">
+				 		<a href="createEnvelope.php"><i class="far fa-plus-square blank"></i></a>
+				 	</div>
+				 	
+		         </div><!--body-->
+		       <!--  </div>card -->
+		    </div><!--column-->   
+
 		</div><!-- Cards -->
 
 
