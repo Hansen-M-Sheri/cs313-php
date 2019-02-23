@@ -63,8 +63,8 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 	$stmt = $db->prepare($sql);
 	$stmt->bindValue(':userID', $_SESSION['userID']);
 	$stmt->execute();
-	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
-	$total = $rowsArray[0]['total'];
+	$result = $stmt->fetchALL(PDO::FETCH_ASSOC);
+	$total = $result[0]['total'];
 ?>
 <!-- Login form - process with login_inc.php-->
 	
