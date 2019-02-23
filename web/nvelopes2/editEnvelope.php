@@ -6,9 +6,10 @@ if(!isset($_SESSION['userID'])){
 	header("Location: login.php?login=noAuth");
 	exit();
 }
-else if(!isset($_GET['envelopeID'])){
-		header("Location: setup.php?error=envID");
-		die();
+else if(!isset($_GET['envID'])){
+	echo var_dump($_GET);
+		// header("Location: setup.php?error=envID");
+		// die();
 	}
 else {
 	
