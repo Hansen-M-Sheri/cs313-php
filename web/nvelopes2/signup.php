@@ -19,7 +19,7 @@
       <h3>Sign up and start saving money now!</h3>
   	</div>
   	<div class="container">
-		<form class="form-group col-md-6 col-md-offset-3" action="includes/login_inc.php" method="POST">
+		<form class="form-group col-md-6 col-md-offset-3" action="includes/signup_inc.php" method="POST">
 			<center><h2>Signup</h2></center><br>
 			<input type="text" placeholder="First Name" name="fName" class="form-control" required><br>
 			<input type="text" placeholder="Last Name" name="lName" class="form-control" required> <br>
