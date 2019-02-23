@@ -11,6 +11,10 @@ if(isset($_POST['createEnvelope'])){
 	$description = htmlspecialchars($_POST['desc']);
 	$warningAmt = htmlspecialchars($_POST['warningAmount']);
 	$color		= htmlspecialchars($_POST['color']);
+	$balance	= htmlspecialchars($_POST['balance']);
+	if(empty($balance)){
+		$balance = '0.00';
+	}
 
 	if(empty($envelopeName) || empty($description) || empty($warningAmt) || empty($color)){
 		header("Location: ../setup.php?envelope=empty");
@@ -45,11 +49,7 @@ if(isset($_POST['createEnvelope'])){
 				$stmt->bindValue(':userID', $_SESSION['userID']);
 				$stmt->bindValue(':date', date("Y/m/d"));
 				$stmt->bindValue(':details', "initialize envelope");
-				$stmt->bindValue(':amount', '0.00');
-				$stmt->execute();
-
-				
-				
+				$stmt->bindValue(':amount', $balance);
 				$stmt->execute();
 				header("Location: ../setup.php?create=success");
 			}
