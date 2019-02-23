@@ -154,7 +154,7 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 							<td><?php echo $row['amount'] ?></td>
 							<td></td> <!-- Leave blank, no withdrawal amount-->
 							<td>
-								<?php $href = "transactionID={$row['id']}&envelopeID={$envelopeID}";
+								<?php $href = "transactionID={$row['id']}&envelopeID={$envelopeID}"; ?>
 };?>
 							<a href="includes/adjustTransaction_inc.php?<?php echo $href; ?>"><i class="far fa-trash-alt trash"></i></a>
 						</td>
