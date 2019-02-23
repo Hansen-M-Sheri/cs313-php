@@ -4,7 +4,10 @@ include "templates/header.php";
 if(isset($_GET['login'])){
 	$error = $_GET['login'];
 	$errMsg = "";
-	if($error == 'email'){
+	if($error == 'empty'){
+		$errMsg = "Email and password must be filled in to login";
+	}
+	else if ($error == 'email'){
 		$errMsg = "Please enter a valid email";
 	}
 	else if ($error == 'signup'){

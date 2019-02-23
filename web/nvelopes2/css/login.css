@@ -5,6 +5,8 @@ ul {
 }
 .error{
 	color: red;
+	margin:20px;
+	text-align: center;
 	}
 .card-container{
 	position:relative;
