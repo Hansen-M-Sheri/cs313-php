@@ -45,7 +45,7 @@ else {
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link" href="login.php">Home</a></li>
 				<li class="nav-item"><a class="nav-link" href="createEnvelope.php">Create Envelope</a></li>
-				<li class="nav-item"><a class="nav-link" href="includes/logout.php.php">Logout</a></li>
+				<li class="nav-item"><a class="nav-link" href="includes/logout.php">Logout</a></li>
 				
 			</ul>
 		</nav>

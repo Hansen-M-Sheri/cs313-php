@@ -120,7 +120,7 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 							<td></td> <!-- Leave blank, no withdrawl amount-->
 							<td>
 							<!-- <a href="adjustTransaction_inc.php?type=edit"><i class="far fa-edit"></i></a> -->
-							<a href="editEnvelope_inc.php?id=.".<?php echo $row['id']?>><i class="far fa-trash-alt"></i></a>
+							<a href="editEnvelope_inc.php?envelopeID=.".<?php echo $row['id']?>><i class="far fa-trash-alt"></i></a>
 						</td>
 						<?php } ?>
 						<!-- ADD ICONS TO ALLOW FOR EDITS/REMOVING TRANSACTIONS-->
