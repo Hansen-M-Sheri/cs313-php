@@ -17,22 +17,22 @@ if(isset($_POST['editEnvelope'])){
 		exit();
 	}
 	else {
-			$sql = 'UPDATE public.envelope SET description=:description, warningamount=:warningamount, color=:color WHERE id=:id;';
-			$stmt = $db->prepare($sql);
-			$stmt->bindValue(':description', $description);
-			$stmt->bindValue(':warningAmt', $warningAmt);
-			$stmt->bindValue(':color', $color);
-			$stmt->bindValue(':id', $id);
-			$stmt->execute();
-			$newItemID =  $db->lastInsertID('envelope_id_seq');
-			if($newItemID < 1){
-				header("Location: ../editEnvelope.php?create=error");
-			} else {
-				//redirect to envelope page
-				header("Location: ../setup.php?update=success");
-			}
-		}
+		$sql = 'UPDATE public.envelope SET description=:description, warningamount=:warningamount, color=:color WHERE id=:id;';
+		$stmt = $db->prepare($sql);
+		$stmt->bindValue(':description', $description);
+		$stmt->bindValue(':warningAmt', $warningAmt);
+		$stmt->bindValue(':color', $color);
+		$stmt->bindValue(':id', $id);
+		$stmt->execute();
+		// $newItemID =  $db->lastInsertID('envelope_id_seq');
+		// if($newItemID < 1){
+		// 	header("Location: ../editEnvelope.php?create=error");
+		// } else {
+			//redirect to envelope page
+			header("Location: ../setup.php?update=success");
+		// }
 	}
+	
 			
 }
 
