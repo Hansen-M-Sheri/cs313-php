@@ -26,7 +26,7 @@ if(isset($_POST['editEnvelope'])){
 		// exit();
 	}
 	else {
-		$sql = 'UPDATE public.envelope SET description=:description, warningamount=:warningamount, color=:color WHERE id=:id;';
+		$sql = 'UPDATE public.envelope SET description=:description, warningamount=:warningAmt, color=:color WHERE id=:id;';
 		$stmt = $db->prepare($sql);
 		$stmt->bindValue(':description', $description);
 		$stmt->bindValue(':warningAmt', $warningAmt);
