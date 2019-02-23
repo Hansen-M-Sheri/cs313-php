@@ -36,7 +36,7 @@ if(isset($_POST['envelopeID'])) {
 	die();
 }
 else {
-	header("Location: ../transactions.php?envID=ErrorNoID");
+	header("Location: ../transactions.php?error=ErrorNoID");
 	die();
 }
 //else if itemID isset: check for type

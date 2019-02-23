@@ -11,19 +11,12 @@ else if(!isset($_GET['envID'])){
 		header("Location: setup.php?error=envID");
 		die();
 	}
-else if(isset($_GET['envelope'])){
-	$error = $_GET['envelope'];
+else if(isset($_GET['update'])){
+	$error = $_GET['update'];
 	$errMsg = "";
 	if($error == 'empty'){
 		$errMsg = "All fields must be filled in";
-	}
-	else if ($error == 'invalidName'){
-		$errMsg = "Please enter a valid envelope name containing letters only";
-	}
-	else if ($error == 'error'){
-		$errMsg = "There was an error creating your envelope, please try again later";
-	}
-	
+	}	
 }
 else {
 	

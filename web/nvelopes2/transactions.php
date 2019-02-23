@@ -8,6 +8,13 @@ if(!isset($_SESSION['userID'])){
 	header("Location: login.php?login=noAuth");
 	exit();
 }
+else if (isset($_GET['error'])){
+	$error = $_GET['error'];
+	$errMsg = "";
+	if($error == 'ErrorNoID'){
+		$errMsg = "Error retrieving envelope id to make transactions, try again later";
+	}
+}
 else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 	if(!isset($_POST['envID']) && !isset($_GET['envID'])){
 		header("Location: login.php?login=noEnvelopeID");
@@ -88,6 +95,10 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
       <h1><?php echo $envelopeName ?> Transactions</h1>
       <h3>View all deposits and withdrawls from one envelope</h3>
   	</div>
+  	<?php
+  		if(!empty($error)){
+  			echo "<div class='error'>".$errMsg."</div>";
+  		}?>
   	<div class="container">
 			<form class="form-inline" action="includes/insertTransaction_inc.php" method="POST">
 				

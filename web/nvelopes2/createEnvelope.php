@@ -6,6 +6,20 @@ if(!isset($_SESSION['userID'])){
 	header("Location: login.php?login=noAuth");
 	exit();
 }
+else if(isset($_GET['envelope'])){
+	$error = $_GET['envelope'];
+	$errMsg = "";
+	if($error == 'empty'){
+		$errMsg = "All fields must be filled in";
+	}
+	else if ($error == 'invalidName'){
+		$errMsg = "Please enter a valid envelope name containing letters only";
+	}
+	else if ($error == 'error'){
+		$errMsg = "There was an error creating your envelope, please try again later";
+	}
+	
+}
 else {
 	$envelopeName = " ";
 	//query for envelopes and display them
@@ -50,6 +64,10 @@ else {
       <h1>Create </h1>
       <h3>Create a new envelope and start choosing where your money will go</h3>
   	</div>
+  	<?php
+  		if(!empty($error)){
+  			echo "<div class='error'>".$errMsg."</div>";
+  		}?>
   	<div class="container">
 		<form id="createEnvelope"action="includes/envelope_inc.php" method="post" class="form-group col-md-6 col-md-offset-3">
 			<center><h2>Create Envelope</h2></center><br>
