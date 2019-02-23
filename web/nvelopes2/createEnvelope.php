@@ -59,7 +59,7 @@ else {
 			<input type="number" placeholder="Warning amount ie: 5.00" name="warningAmount" class="form-control" required>
 			<p>If envelope total drops below warning value, envelope will turn red</p><br>
 			<input type="color" placeholder="" name="color" class="form-control" required>
-			<p>Select color for envelope. **</p><br>
+			<p>Select color for envelope. **If red is selected, warning will not be visible</p><br>
 			<input type="submit" name="createEnvelope" class="btn btn-primary btn-block" value="Create Envelope">
 		</form>	
 			

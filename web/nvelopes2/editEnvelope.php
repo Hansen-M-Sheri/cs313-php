@@ -17,7 +17,7 @@ else {
 	$envelopeName = " ";
 	//query for envelopes and display them
 	// echo "test";
-	$sql = ' SELECT
+	$sql = 'SELECT
 				 name,
 				 description,
 				 color,
@@ -25,12 +25,13 @@ else {
 				FROM
 				 public.envelope
 				 WHERE
-				 id = :envelopeID';
+				 id=:envelopeID';
 	// echo $sql;
 	$stmt = $db->prepare($sql);
 	$stmt->bindValue(':envelopeID', $_GET['envelopeID']);
 	$stmt->execute();
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
+	echo var_dump($rowsArray);
 	$envelopName = $rowsArray[0]['name'];
 	$description = $rowsArray[0]['description'];
 	$color = $rowsArray[0]['color'];
@@ -60,12 +61,12 @@ else {
   	<div class="container">
 		<form id="createEnvelope"action="includes/editEnvelope_inc.php" method="post" class="form-group col-md-6 col-md-offset-3">
 			
-			<input type="textarea" value=<?php echo $description ?> name="desc" class="form-control" required><br>
+			<input type="textarea" value="<?php echo $description ?>" name="desc" class="form-control" required><br>
 				
-			<input type="number" value=<?php echo $warningamount ?> name="warningAmount" class="form-control" required>
+			<input type="number" value="<?php echo $warningamount ?>" name="warningAmount" class="form-control" required>
 			<p>If envelope total drops below warning value, envelope will turn red</p><br>
-			<input type="color" value=<?php echo $color ?> name="color" class="form-control" required>
-			<p>Select color for envelope. **</p><br>
+			<input type="color" value="<?php echo $color ?>" name="color" class="form-control" required>
+			<p>Select color for envelope. **If red is selected, warning will not be visible</p><br>
 			<input type="submit" name="editEnvelope" class="btn btn-primary btn-block" value="Save Envelope Settings">
 		</form>	
 			
