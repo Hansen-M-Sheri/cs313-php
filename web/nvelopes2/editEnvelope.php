@@ -7,9 +7,9 @@ if(!isset($_SESSION['userID'])){
 	exit();
 }
 else if(!isset($_GET['envID'])){
-	echo var_dump($_GET);
-		// header("Location: setup.php?error=envID");
-		// die();
+	// echo var_dump($_GET);
+		header("Location: setup.php?error=envID");
+		die();
 	}
 else {
 	
@@ -32,7 +32,7 @@ else {
 	$stmt->execute();
 	$rowsArray = $stmt->fetchALL(PDO::FETCH_ASSOC);
 	echo var_dump($rowsArray);
-	$envelopName = $rowsArray[0]['name'];
+	$envelopeName = $rowsArray[0]['name'];
 	$description = $rowsArray[0]['description'];
 	$color = $rowsArray[0]['color'];
 	$warningamount = $rowsArray[0]['warningamount'];
