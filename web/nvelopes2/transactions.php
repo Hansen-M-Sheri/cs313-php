@@ -114,10 +114,8 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 					$<input  type="number" min="0.01" step="0.01" name="amount" id="amount" class="form-control mb-2 mr-sm-2" placeholder="0.00"> <!-- <br> -->
 					<div class="buttons">
 						<input type="submit" name="deposit" value="Deposit"class="btn btn-success mb-2">
-						<input type="submit" name="withdrawl" value="Withdrawl"class="btn btn-danger mb-2">
-					</div>
-					<!-- <button type="button" name="addTransaction" class="btn btn-primary btn-block" onclick="addTransaction(<?php echo $envelopeID; ?>, <?php echo $_SESSION['userID']; ?>, $('#date').html(), $('#details').html(), $('#amount').html(),'add')"> Add Transaction </button> -->
-				
+						<input type="submit" name="withdrawl" value="Withdrawal"class="btn btn-danger mb-2">
+					</div>				
 			</form>
 			<hr>
 			<!-- Print total for envelope -->
@@ -133,7 +131,7 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 						<th>Date</th>
 						<th>Details</th>
 						<th>Deposits</th>
-						<th>Withdrawls</th>
+						<th>Withdrawals</th>
 						<th></th><!-- PUT EDIT/REMOVE OPTION IN THIS COLUMN-->
 					</tr>
 				</thead>
@@ -148,14 +146,14 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 							<td></td> <!-- Leave blank, no deposit amount-->
 							<td><?php echo $row['amount'] ?></td>
 							<td>
-								<a href="includes/editEnvelope_inc.php?envelopeID=.".<?php echo $row['id']?>><i class="far fa-trash-alt trash"></i></a>
+								<a href="includes/adjustTransaction_inc.php?transactionID=.".<?php echo $row['id']?>><i class="far fa-trash-alt trash"></i></a>
 							</td>
 						<?php } else { ?>
 							<td><?php echo $row['amount'] ?></td>
-							<td></td> <!-- Leave blank, no withdrawl amount-->
+							<td></td> <!-- Leave blank, no withdrawal amount-->
 							<td>
-							<!-- <a href="adjustTransaction_inc.php?type=edit"><i class="far fa-edit"></i></a> -->
-							<a href="includes/editEnvelope_inc.php?envelopeID=.".<?php echo $row['id']?>><i class="far fa-trash-alt trash"></i></a>
+								<?php $href= "includes/adjustTransaction_inc.php?transactionID=$row['id']&envelopeID=$envelopeID";?>
+							<a href=<?php echo $href ?><i class="far fa-trash-alt trash"></i></a>
 						</td>
 						<?php } ?>
 					</tr>
@@ -172,21 +170,6 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 			
   		</div><!--column-->
 	</div><!--row-->
-				
-
-		
-
 </div>
-
-	<script>
-		function addTransaction(envelopeID, userID, date, details, amount, type) {
-	$.post('includes/ajax_inc.php',
-		{"envelopeID": envelopeID, "userID": userID, "date": date, "details":details, "amount": amount, "type": type},
-			function (returnedData) {
-				console.log(returnedData);
-
-		}, 'json');
-	}
-	</script>
 
 <?php include "templates/footer.php"; ?>
