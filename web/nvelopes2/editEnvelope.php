@@ -60,11 +60,13 @@ else {
   	</div>
   	<div class="container">
 		<form id="createEnvelope"action="includes/editEnvelope_inc.php" method="post" class="form-group col-md-6 col-md-offset-3">
-			
-			<input type="textarea" value="<?php echo $description ?>" name="desc" class="form-control" required><br>
-				
+			<input type="hidden" name="envID" value="<?php echo $row['id']?>">
+			<label for="desc" value="Envelope Description:">
+			<input type="text" value="<?php echo $description ?>" name="desc" class="form-control" required><br>
+			<label for="warningamount" value="Warning Amount:">
 			<input type="number" value="<?php echo $warningamount ?>" name="warningAmount" class="form-control" required>
 			<p>If envelope total drops below warning value, envelope will turn red</p><br>
+			<label for="color" value="Envelope Color:">
 			<input type="color" value="<?php echo $color ?>" name="color" class="form-control" required>
 			<p>Select color for envelope. **If red is selected, warning will not be visible</p><br>
 			<input type="submit" name="editEnvelope" class="btn btn-primary btn-block" value="Save Envelope Settings">
