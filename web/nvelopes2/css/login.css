@@ -3,7 +3,9 @@
 ul {
 	margin-left: 20px !important;
 }
-
+.error{
+	color: red;
+	}
 .card-container{
 	position:relative;
 	/*background-color: green;*/
