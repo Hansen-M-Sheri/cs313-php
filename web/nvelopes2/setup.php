@@ -67,7 +67,7 @@ else {
 			<div class="col-md-3 ">
 			    <div class="card mb-3 box-shadow" style="background: <?php echo$row['color']?>">
 		    		<div class="card-edit">
-		    			<a href="adjustTransaction_inc.php?type=edit"><i class="far fa-edit card-edit"></i></a>
+		    			<a href="editEnvelope.php?type=edit"><i class="far fa-edit card-edit"></i></a>
 		    		</div>
 		          	<h3 class="card-title"><?php echo $row['name']?></h3>
 		          	<div class="card-body">
