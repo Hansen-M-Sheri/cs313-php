@@ -112,10 +112,10 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 			<!-- Print total for envelope -->
 			<table class="table table-striped table-bordered">
 					<tr>
-						<td>Envelope Total</td>
-						<td><?php $total ?></td>
+						<th>Envelope Total</td>
+						<th><?php echo $total ?></td>
 					</tr>
-					<
+					
 			<table class="table table-striped table-bordered">
 				<thead>
 					<tr>
