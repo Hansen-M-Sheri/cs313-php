@@ -64,7 +64,7 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 	$stmt->bindValue(':envelopeID', $envelopeID);
 	$stmt->execute();
 	$result = $stmt->fetchALL(PDO::FETCH_ASSOC);
-	$total = $result['total'];
+	$total = $result[0]['total'];
 ?>
 <!-- Login form - process with login_inc.php-->
 	
