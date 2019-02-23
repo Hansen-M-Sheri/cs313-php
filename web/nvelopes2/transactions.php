@@ -111,11 +111,11 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 			<hr>
 			<!-- Print total for envelope -->
 			<table class="table table-striped table-bordered">
-					<tr>
-						<th>Envelope Total</td>
-						<th>$<?php echo $total ?></td>
-					</tr>
-					
+				<tr>
+					<th>Envelope Total</th>
+					<th>$<?php echo $total ?></th>
+				</tr>
+			</table>
 			<table class="table table-striped table-bordered">
 				<thead>
 					<tr>
@@ -137,20 +137,26 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 							<td></td> <!-- Leave blank, no deposit amount-->
 							<td><?php echo $row['amount'] ?></td>
 							<td>
-								<a href="adjustTransaction_inc.php?type=remove.".<?php echo $row['id']?>><i class="far fa-trash-alt trash"></i></a>
+								<a href="includes/editEnvelope_inc.php?envelopeID=.".<?php echo $row['id']?>><i class="far fa-trash-alt trash"></i></a>
 							</td>
 						<?php } else { ?>
 							<td><?php echo $row['amount'] ?></td>
 							<td></td> <!-- Leave blank, no withdrawl amount-->
 							<td>
 							<!-- <a href="adjustTransaction_inc.php?type=edit"><i class="far fa-edit"></i></a> -->
-							<a href="editEnvelope_inc.php?envelopeID=.".<?php echo $row['id']?>><i class="far fa-trash-alt trash"></i></a>
+							<a href="includes/editEnvelope_inc.php?envelopeID=.".<?php echo $row['id']?>><i class="far fa-trash-alt trash"></i></a>
 						</td>
 						<?php } ?>
 					</tr>
 					<?php endforeach; ?>
 					
 				<tbody>
+			</table>
+			<table class="table table-striped table-bordered">
+				<tr>
+					<th>Envelope Total</th>
+					<th>$<?php echo $total ?></th>
+				</tr>
 			</table>
 			
   		</div><!--column-->
