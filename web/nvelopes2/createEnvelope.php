@@ -55,7 +55,7 @@ else {
 			<center><h2>Create Envelope</h2></center><br>
 			<input type="text" placeholder="Envelope Name" name="name" class="form-control" required><br>
 			<input type="text" placeholder="Description" name="desc" class="form-control" required><br>
-				
+			<input type="number" placeholder="Initial Balance" name="balance" class="form-control"><br>
 			<input type="number" placeholder="Warning amount ie: 5.00" name="warningAmount" class="form-control" required>
 			<p>If envelope total drops below warning value, envelope will turn red</p><br>
 			<input type="color" placeholder="" name="color" class="form-control" required>
