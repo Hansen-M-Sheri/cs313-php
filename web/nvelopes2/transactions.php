@@ -56,15 +56,15 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 				 INNER JOIN public.envelope
 				 ON transaction.envelopeid = envelope.id
 				 WHERE
-				 userid = :userID
+				 envelopeid = :envelopeID
 				GROUP BY
 				 name, envelope.id;';
 	// echo $sql;
 	$stmt = $db->prepare($sql);
-	$stmt->bindValue(':userID', $_SESSION['userID']);
+	$stmt->bindValue(':envelopeID', $envelopeID);
 	$stmt->execute();
 	$result = $stmt->fetchALL(PDO::FETCH_ASSOC);
-	$total = $result[0]['total'];
+	$total = $result['total'];
 ?>
 <!-- Login form - process with login_inc.php-->
 	
