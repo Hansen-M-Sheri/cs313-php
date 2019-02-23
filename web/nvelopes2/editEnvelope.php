@@ -60,7 +60,7 @@ else {
   	</div>
   	<div class="container">
 		<form id="createEnvelope"action="includes/editEnvelope_inc.php" method="post" class="form-group col-md-6 col-md-offset-3">
-			<input type="hidden" name="envID" value="<?php echo $row['id']?>">
+			<input type="hidden" name="envID" value="<?php echo $_GET['envID']?>">
 			<label for="desc" value="Envelope Description:">
 			<input type="text" value="<?php echo $description ?>" name="desc" class="form-control" required><br>
 			<label for="warningamount" value="Warning Amount:">
