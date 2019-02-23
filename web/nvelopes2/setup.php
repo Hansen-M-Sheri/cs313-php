@@ -69,7 +69,7 @@ else {
 			    <div class="card mb-3 box-shadow" style="background: <?php echo$row['color']?>">
 		    		<div class="card-edit">
 
-		    			<?php echo '<a  href="editEnvelope.php?envID='.$row['id'].'><i class="far fa-edit card-edit"></i></a>' ?>
+		    			<a href="editEnvelope.php?envID=<?php echo $row['id']?>"><i class="far fa-edit card-edit"></i></a>
 		    		</div>
 		          	<h3 class="card-title"><?php echo $row['name']?></h3>
 		          	<div class="card-body">
