@@ -147,15 +147,15 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 						<?php if($row['amount'] < 0){ ?>
 							<td></td> <!-- Leave blank, no deposit amount-->
 							<td><?php echo $row['amount'] ?></td>
+						<?php $href = "transactionID={$row['id']}&envelopeID={$envelopeID}"; ?>
 							<td>
-								<!-- <a href="includes/adjustTransaction_inc.php?transactionID=.".<?php echo $param?>><i class="far fa-trash-alt trash"></i></a> -->
+								<a href="includes/adjustTransaction_inc.php?<?php echo $href; ?>"><i class="far fa-trash-alt trash"></i></a>
 							</td>
 						<?php } else { ?>
 							<td><?php echo $row['amount'] ?></td>
 							<td></td> <!-- Leave blank, no withdrawal amount-->
 							<td>
-								<?php $href = "transactionID={$row['id']}&envelopeID={$envelopeID}"; ?>
-};?>
+
 							<a href="includes/adjustTransaction_inc.php?<?php echo $href; ?>"><i class="far fa-trash-alt trash"></i></a>
 						</td>
 						<?php } ?>
