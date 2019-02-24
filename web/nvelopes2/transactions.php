@@ -60,8 +60,6 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 				 SUM (amount) AS total
 				FROM
 				 public.transaction
-				 INNER JOIN public.envelope
-				 ON transaction.envelopeid = envelope.id
 				 WHERE
 				 envelopeid = :envelopeID
 				AND
@@ -69,7 +67,7 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 	// echo $sql;
 	$stmt = $db->prepare($sql);
 	$stmt->bindValue(':envelopeID', $envelopeID);
-	$stmt->bindValue(':userID', $_Session['userID']);
+	$stmt->bindValue(':userID', $_SESSION['userID']);
 	$stmt->execute();
 	$result = $stmt->fetchALL(PDO::FETCH_ASSOC);
 	echo var_dump($result);
