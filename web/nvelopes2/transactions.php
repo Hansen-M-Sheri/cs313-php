@@ -156,7 +156,7 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 							<td>
 								<?php $href = "transactionID={$row['id']}&envelopeID={$envelopeID}"; ?>
 };?>
-							<a href="includes/adjustTransaction_inc.php?.".<?php echo $href; ?>><i class="far fa-trash-alt trash"></i></a>
+							<a href="includes/adjustTransaction_inc.php?"<?php echo $href; ?>><i class="far fa-trash-alt trash"></i></a>
 						</td>
 						<?php } ?>
 					</tr>
