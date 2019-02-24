@@ -11,5 +11,6 @@ else {
 	$stmt->bindValue(':id', $_GET['transactionID']);
 	$stmt->execute();
 	//refresh transactions.php
-	header("Location: ../transactions.php?envID=$_GET['envelopeID']");
+	$envID = $_GET['envelopeID'];
+	header("Location: ../transactions.php?envID=$envID");
 }
