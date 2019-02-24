@@ -1,8 +1,9 @@
 <?php
 include 'dbh_inc.php';
 if(!isset($_GET['transactionID'])){
-	header("Location: ../transactions.php");
-	die();
+	echo var_dump($_GET);
+	// header("Location: ../transactions.php");
+	// die();
 }
 else {
 	// echo var_dump($_GET);
