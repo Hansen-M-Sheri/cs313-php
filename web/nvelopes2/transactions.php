@@ -72,6 +72,7 @@ else { // ****** GET ALL TRANSACTIONS IF ENVELOPEID ISSET**
 	$stmt->bindValue(':userID', $_Session['userID']);
 	$stmt->execute();
 	$result = $stmt->fetchALL(PDO::FETCH_ASSOC);
+	echo var_dump($result);
 	$total = $result[0]['total'];
 
 
