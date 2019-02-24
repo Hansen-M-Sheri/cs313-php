@@ -1,4 +1,5 @@
 <?php
+include 'dbh_inc.php';
 if(!isset($_GET['transactionID'])){
 	header("Location: ../transactions.php");
 	die();
